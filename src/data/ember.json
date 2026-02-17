@@ -1,0 +1,560 @@
+{
+    "brand": {
+      "id": "ember",
+      "name": "Ember Roasts",
+      "emoji": "☕",
+      "industry": "Specialty Coffee",
+      "tagline": "From bean to brilliance",
+      "established_product": {
+        "name": "Single-origin whole bean subscriptions",
+        "price": "$18/bag",
+        "customers": 40000,
+        "monthly_spend": "$120K/month Meta",
+        "rating": 4.8
+      },
+      "new_product": {
+        "name": "Ready-to-drink cold brew cans",
+        "price": "$5.99/4-pack",
+        "channel": "Retail + DTC",
+        "launch": "Summer"
+      },
+      "tension": "Craft snobs vs convenience buyers",
+      "colors": {
+        "primary": "#6F4E37",
+        "secondary": "#D4A017",
+        "accent": "#2C1810",
+        "light": "#FFF8F0",
+        "gradient_from": "#6F4E37",
+        "gradient_to": "#D4A017"
+      }
+    },
+  
+    "act1": {
+      "title": "Audience Discovery",
+      "question": "Do our subscribers even drink canned coffee?",
+      "context": "Ember connects their Shopify + Meta data. LCBM analyzes 40K subscribers for RTD purchase propensity.",
+      "existing_customers": 40000,
+      "crossover_rate": 0.20,
+      "crossover_count": 8000,
+  
+      "bridge_segment": {
+        "name": "Gateway Segment",
+        "size": 8000,
+        "fit_score": 84,
+        "description": "Subscribers who also buy sparkling water and energy drinks",
+        "insight": "They value convenience in beverages, just not bad coffee"
+      },
+  
+      "social_agents_insight": "Your subscribers will try it out of loyalty, but won't repurchase — it's not their ritual. New audiences will love the product but think 'craft coffee' means pretentious and overpriced.",
+  
+      "new_audiences": [
+        {
+          "id": "busy_commuters",
+          "name": "Busy Commuters",
+          "size": "2.1M",
+          "fit_score": 88,
+          "icon": "🚇",
+          "demographics": "Urban professionals, 25-40",
+          "psychographics": "Time-poor, grab-and-go mentality, values efficiency",
+          "affinities": [
+            { "name": "Transit & Commute Content", "strength": 90, "reason": "Always looking for time-saving solutions" },
+            { "name": "Quick Breakfast Ideas", "strength": 85, "reason": "Morning routine optimization" },
+            { "name": "Productivity Hacks", "strength": 78, "reason": "Values efficiency above all" }
+          ],
+          "top_content": ["Morning routine hacks", "Grab-and-go recipes", "Time-saving tips"],
+          "recommended_angle": "Morning shortcut messaging",
+          "compatible_strategies": ["best_canned_coffee", "premium_convenience"]
+        },
+        {
+          "id": "fitness_crowd",
+          "name": "Fitness-Before-Work",
+          "size": "1.8M",
+          "fit_score": 85,
+          "icon": "🏋️",
+          "demographics": "Active professionals, 22-38",
+          "psychographics": "Early risers, health-conscious, pre-workout ritual",
+          "affinities": [
+            { "name": "Fitness Content", "strength": 92, "reason": "Caffeine as performance enhancer" },
+            { "name": "Clean Eating", "strength": 80, "reason": "Cares about ingredient quality" },
+            { "name": "Morning Routines", "strength": 87, "reason": "Structured pre-work rituals" }
+          ],
+          "top_content": ["Pre-workout nutrition", "5AM club content", "Active lifestyle"],
+          "recommended_angle": "Performance and energy messaging",
+          "compatible_strategies": ["best_canned_coffee", "premium_convenience"]
+        },
+        {
+          "id": "office_snackers",
+          "name": "Office Snackers",
+          "size": "2.4M",
+          "fit_score": 82,
+          "icon": "💼",
+          "demographics": "Office workers, 24-45",
+          "psychographics": "Desk-bound, snack-driven, social at work",
+          "affinities": [
+            { "name": "Office Culture Content", "strength": 76, "reason": "Relatable workplace moments" },
+            { "name": "Snack & Beverage Reviews", "strength": 88, "reason": "Always trying new desk snacks" },
+            { "name": "Work From Home Tips", "strength": 72, "reason": "Home office setup culture" }
+          ],
+          "top_content": ["Office snack hauls", "WFH setup tours", "Afternoon slump solutions"],
+          "recommended_angle": "Afternoon energy boost messaging",
+          "compatible_strategies": ["best_canned_coffee"]
+        },
+        {
+          "id": "iced_coffee_addicts",
+          "name": "Iced Coffee Addicts",
+          "size": "3.2M",
+          "fit_score": 91,
+          "icon": "🧊",
+          "demographics": "Year-round cold coffee drinkers, 18-35",
+          "psychographics": "Cold coffee is a lifestyle, not seasonal, brand-curious",
+          "affinities": [
+            { "name": "Coffee Shop Reviews", "strength": 94, "reason": "Constantly seeking the best cold brew" },
+            { "name": "TikTok Food Content", "strength": 89, "reason": "Discovers drinks through social" },
+            { "name": "Beverage Unboxings", "strength": 85, "reason": "Loves trying new drinks" }
+          ],
+          "top_content": ["Cold brew taste tests", "Coffee shop ranking videos", "DIY iced coffee"],
+          "recommended_angle": "Best canned coffee you've ever had",
+          "compatible_strategies": ["best_canned_coffee"]
+        }
+      ],
+  
+      "strategies": [
+        {
+          "id": "premium_convenience",
+          "label": "Premium Convenience",
+          "emoji": "✨",
+          "description": "Target the gateway segment with a craft + convenience pitch. Position RTD as Ember quality, made convenient.",
+          "target": "Gateway segment (8K existing subscribers who value convenience)",
+          "pitch": "Craft coffee, zero effort",
+          "risks": "Limited reach, subscribers may still see it as a downgrade",
+          "impacts": {
+            "act2_creative_filter": "heritage",
+            "act2_recommended": "roasters_pick",
+            "act3_scenario": "subscriber_track",
+            "act3_cpa": 14.50,
+            "act3_roas": 1.1,
+            "act3_ctr": "1.6%",
+            "act3_repeat_rate": "9%",
+            "act3_crisis": "subscribers_wont_reorder",
+            "act4_angle": "companion_positioning"
+          }
+        },
+        {
+          "id": "best_canned_coffee",
+          "label": "Best Canned Coffee Ever",
+          "emoji": "🚀",
+          "description": "Target cold audiences who've never heard of Ember. Make them fall in love with the can first, the brand second.",
+          "target": "Cold audiences - Commuters, Iced Coffee Addicts, Office Snackers",
+          "pitch": "Cold brew so good you'll cancel your coffee shop run",
+          "risks": "Brand dilution risk, craft audience may feel alienated",
+          "impacts": {
+            "act2_creative_filter": "product",
+            "act2_recommended": "morning_shortcut",
+            "act3_scenario": "new_audience_track",
+            "act3_cpa": 8.20,
+            "act3_roas": 3.1,
+            "act3_ctr": "3.2%",
+            "act3_repeat_rate": "28%",
+            "act3_crisis": "subscribers_churn",
+            "act4_angle": "provenance_positioning"
+          }
+        }
+      ]
+    },
+  
+    "act2": {
+      "title": "Creative Bake-off",
+      "question": "Our whole-bean aesthetic won't sell a $6 can.",
+      "context": "12 creatives submitted. LCBM scores against both audience tracks.",
+  
+      "creatives": [
+        {
+          "id": "roasters_pick",
+          "name": "Roaster's Pick",
+          "type": "VIDEO",
+          "angle": "heritage",
+          "thumbnail": "🎬",
+          "description": "Head roaster taste-testing cans behind the scenes",
+          "hook": "From the people behind 10M+ cups...",
+          "scores": {
+            "existing_subscribers": 8.5,
+            "new_audiences": 3.8
+          },
+          "best_for": "existing_subscribers",
+          "recommended_for_strategy": "premium_convenience",
+          "why_it_works": "Existing subscribers trust the roaster. Authenticity drives repurchase.",
+          "why_it_fails": "Cold audiences don't know Ember. Heritage story means nothing yet."
+        },
+        {
+          "id": "morning_shortcut",
+          "name": "Morning Shortcut",
+          "type": "UGC",
+          "angle": "product",
+          "thumbnail": "☀️",
+          "description": "Woman grabs a can, skips the coffee shop line, $4 saved",
+          "hook": "Cold brew so good you'll cancel your coffee shop run",
+          "scores": {
+            "existing_subscribers": 5.2,
+            "new_audiences": 8.8
+          },
+          "best_for": "new_audiences",
+          "recommended_for_strategy": "best_canned_coffee",
+          "why_it_works": "Relatable, saves money, zero pretension. Speaks to commuters perfectly.",
+          "why_it_fails": "Subscribers feel their ritual is being reduced to convenience."
+        },
+        {
+          "id": "single_origin_story",
+          "name": "Single Origin Story",
+          "type": "CAROUSEL",
+          "angle": "heritage",
+          "thumbnail": "🌍",
+          "description": "The Yirgacheffe origin story — farm to can",
+          "hook": "From Ethiopian highlands to your morning commute",
+          "scores": {
+            "existing_subscribers": 8.4,
+            "new_audiences": 3.2
+          },
+          "best_for": "existing_subscribers",
+          "recommended_for_strategy": "premium_convenience",
+          "why_it_works": "Coffee nerds love provenance. Yirgacheffe is a magic word for them.",
+          "why_it_fails": "Cold audiences don't know what Yirgacheffe means and don't care."
+        },
+        {
+          "id": "gym_grab",
+          "name": "Gym Grab",
+          "type": "VIDEO",
+          "angle": "product",
+          "thumbnail": "💪",
+          "description": "Pre-workout grab from the fridge, quick sip, power through the workout",
+          "hook": "Your pre-workout just got a serious upgrade",
+          "scores": {
+            "existing_subscribers": 6.1,
+            "new_audiences": 8.2
+          },
+          "best_for": "new_audiences",
+          "recommended_for_strategy": "best_canned_coffee",
+          "why_it_works": "Fitness crowd loves performance framing. Simple and energetic.",
+          "why_it_fails": "Heritage subscribers don't identify with gym culture coffee."
+        },
+        {
+          "id": "office_moment",
+          "name": "The 3PM Savior",
+          "type": "STATIC",
+          "angle": "product",
+          "thumbnail": "⏰",
+          "description": "Can on desk, afternoon slump solved, productivity restored",
+          "hook": "The 3PM slump just met its match",
+          "scores": {
+            "existing_subscribers": 5.8,
+            "new_audiences": 7.9
+          },
+          "best_for": "new_audiences",
+          "recommended_for_strategy": "best_canned_coffee",
+          "why_it_works": "Universal workplace moment. Instantly relatable to office workers.",
+          "why_it_fails": "Too generic for craft coffee subscribers who have a ritual."
+        },
+        {
+          "id": "taste_test",
+          "name": "Blind Taste Test",
+          "type": "VIDEO",
+          "angle": "social_proof",
+          "thumbnail": "🧪",
+          "description": "People blind taste-test vs major cold brew brands — Ember wins every time",
+          "hook": "We let 100 strangers decide. The results shocked us.",
+          "scores": {
+            "existing_subscribers": 7.2,
+            "new_audiences": 8.6
+          },
+          "best_for": "new_audiences",
+          "recommended_for_strategy": "best_canned_coffee",
+          "why_it_works": "Social proof + curiosity hook. Works across audiences.",
+          "why_it_fails": "Subscribers already know Ember is good. This preaches to the choir."
+        }
+      ],
+  
+      "test_plan": {
+        "budget": 5000,
+        "duration_hours": 48,
+        "cells_per_track": 3,
+        "scenarios": {
+          "premium_convenience": {
+            "cells": [
+              { "creative": "roasters_pick", "audience": "Gateway Segment", "budget": 1667 },
+              { "creative": "single_origin_story", "audience": "Gateway Segment", "budget": 1667 },
+              { "creative": "taste_test", "audience": "Gateway Segment", "budget": 1666 }
+            ],
+            "landing_page": "Craft story page — subscribers see the heritage journey",
+            "stop_rule": "CPA > $20 after 50 clicks",
+            "promote_rule": "ROAS > 2x after $500 spend"
+          },
+          "best_canned_coffee": {
+            "cells": [
+              { "creative": "morning_shortcut", "audience": "Iced Coffee Addicts", "budget": 1667 },
+              { "creative": "gym_grab", "audience": "Fitness-Before-Work", "budget": 1667 },
+              { "creative": "taste_test", "audience": "Busy Commuters", "budget": 1666 }
+            ],
+            "landing_page": "Simple try-it page — no craft jargon, just the product",
+            "stop_rule": "CPA > $15 after 50 clicks",
+            "promote_rule": "ROAS > 3x after $500 spend"
+          }
+        }
+      }
+    },
+  
+    "act3": {
+      "title": "Performance Diagnosis",
+      "question": "New customers love it. Our own subscribers won't reorder.",
+      "context": "Five weeks in. The data is in. Something unexpected happened.",
+      "weeks_running": 5,
+  
+      "scenarios": {
+        "premium_convenience": {
+          "tracks": [
+            {
+              "name": "New Audiences",
+              "cpa": 8.20,
+              "roas": 3.1,
+              "ctr": "3.2%",
+              "repeat_rate": "28%",
+              "status": "WINNING",
+              "insight": "Outperforming whole-bean campaigns"
+            },
+            {
+              "name": "Existing Subscribers",
+              "cpa": 14.50,
+              "roas": 1.1,
+              "ctr": "1.6%",
+              "repeat_rate": "9%",
+              "status": "STRUGGLING",
+              "insight": "Tried once out of loyalty, won't come back"
+            }
+          ],
+          "diagnosis": {
+            "type": "FORMAT_MISMATCH",
+            "title": "Format Mismatch Detected",
+            "not_the_problem": "Not creative fatigue — frequency is only 2.1",
+            "root_cause": "LCBM detects subscribers see canned coffee as a downgrade, not an addition. The ads position it as 'Ember in a can' — which reads as 'lesser version of what I already have'",
+            "funnel_insight": "Subscribers click, buy once (loyalty), but post-purchase survey shows: 'I prefer my usual pour-over'",
+            "social_agents": "Stop selling them a replacement. Sell them a COMPANION — 'For when you can't brew.' It's their Ember for the airport, the office, the road trip."
+          },
+          "recovery_strategies": [
+            {
+              "id": "companion_positioning",
+              "label": "Companion Not Replacement",
+              "emoji": "✈️",
+              "description": "Reframe the can as the travel/office companion to the pour-over ritual, not a replacement",
+              "transsuasion_copy": "Your pour-over ritual. Everywhere else, this.",
+              "bundle_idea": "Subscriber-exclusive bundle: beans + cans at a discount",
+              "expected_lift": "Repeat rate 9% → 22-28%",
+              "impact_act4": "loyal_base_activated",
+              "impacts": {
+                "act4_subscriber_advantage": true,
+                "act4_bundle_available": true,
+                "act4_positioning": "companion"
+              }
+            },
+            {
+              "id": "double_down_new",
+              "label": "Double Down on New Audiences",
+              "emoji": "🚀",
+              "description": "Stop subscriber push entirely. Reallocate all budget to new audiences who are performing at 3.1x ROAS",
+              "transsuasion_copy": "The cold brew that made 10,000 commuters cancel their Starbucks order",
+              "expected_lift": "Overall ROAS 2.1x → 3.4x",
+              "impact_act4": "new_audience_focus",
+              "impacts": {
+                "act4_subscriber_advantage": false,
+                "act4_bundle_available": false,
+                "act4_positioning": "new_customer"
+              }
+            }
+          ]
+        },
+        "best_canned_coffee": {
+          "tracks": [
+            {
+              "name": "New Audiences",
+              "cpa": 8.20,
+              "roas": 3.1,
+              "ctr": "3.2%",
+              "repeat_rate": "28%",
+              "status": "WINNING",
+              "insight": "Best performing campaign in Ember history"
+            },
+            {
+              "name": "Existing Subscribers",
+              "cpa": 19.50,
+              "roas": 0.8,
+              "ctr": "1.1%",
+              "repeat_rate": "7%",
+              "status": "FAILING",
+              "insight": "Product-first messaging doesn't resonate with craft loyalists"
+            }
+          ],
+          "diagnosis": {
+            "type": "AUDIENCE_SPLIT",
+            "title": "Audience Identity Conflict",
+            "not_the_problem": "New audience performance is excellent — don't touch it",
+            "root_cause": "The product-first messaging that works brilliantly for cold audiences actively alienates existing subscribers who bought into the craft story",
+            "funnel_insight": "Subscribers open ads, see convenience messaging, feel their identity as 'serious coffee people' is threatened",
+            "social_agents": "You have two completely different products for two completely different people. Stop trying to serve both with one message. Segment hard."
+          },
+          "recovery_strategies": [
+            {
+              "id": "full_segmentation",
+              "label": "Hard Segmentation",
+              "emoji": "✂️",
+              "description": "Run completely separate campaigns. Exclude all existing subscribers from new audience campaigns entirely",
+              "transsuasion_copy": "Subscribers: 'Your ritual, now in a can.' New audiences: 'Best cold brew you've ever had.'",
+              "expected_lift": "Subscriber repeat rate 7% → 18%, New audience ROAS 3.1x → 3.8x",
+              "impact_act4": "dual_track",
+              "impacts": {
+                "act4_subscriber_advantage": true,
+                "act4_bundle_available": false,
+                "act4_positioning": "dual_track"
+              }
+            },
+            {
+              "id": "new_audience_only",
+              "label": "Abandon Subscriber Push",
+              "emoji": "🎯",
+              "description": "Subscribers will organically discover the can. Focus 100% budget on new audience acquisition",
+              "transsuasion_copy": "The cold brew that converts Starbucks regulars to craft coffee lovers",
+              "expected_lift": "New audience ROAS 3.1x → 4.2x, CAC drops 35%",
+              "impact_act4": "new_only",
+              "impacts": {
+                "act4_subscriber_advantage": false,
+                "act4_bundle_available": false,
+                "act4_positioning": "new_customer"
+              }
+            }
+          ]
+        }
+      }
+    },
+  
+    "act4": {
+      "title": "Regional Expansion",
+      "question": "We're DTC-only in Portland. Time to go retail in 3 new markets.",
+      "context": "Ember's cold brew cans are ready for retail distribution. But the RTD competitive landscape is different in each market.",
+  
+      "markets": [
+        {
+          "id": "austin",
+          "name": "Austin",
+          "emoji": "🤠",
+          "state": "Texas",
+          "population": "978K",
+          "cold_brew_adoption": "High",
+          "competitive_landscape": "Dominated by local brand Chameleon Cold Brew",
+          "specialty_coffee_culture": "Strong — farm-to-cup movement growing",
+          "lcbm_score": 87,
+          "lcbm_insight": "Lead with single-origin positioning — Austin's specialty coffee culture responds to provenance. Unlike DTC cold audiences, Austin responds to WHERE the coffee comes from.",
+          "recommended_angle": "Single-Origin Story",
+          "recommended_creative": "single_origin_story",
+          "budget": 15000,
+          "predicted_cpa": 9.80,
+          "predicted_roas": 2.8,
+          "playbook": {
+            "awareness": "Single-origin story ads targeting local Austin coffee culture",
+            "consideration": "Comparison content vs Chameleon — quality differentiation",
+            "conversion": "Drive to H-E-B and Whole Foods retail locations"
+          },
+          "conditions": {
+            "companion_positioning": {
+              "advantage": "Subscriber base in Austin area becomes brand advocates in retail",
+              "extra_tactic": "Local subscriber meetup + in-store sampling event"
+            },
+            "new_customer": {
+              "advantage": "Cold audience playbook already proven in DTC transfers to retail",
+              "extra_tactic": "QR codes on cans linking to DTC subscription offer"
+            }
+          }
+        },
+        {
+          "id": "denver",
+          "name": "Denver",
+          "emoji": "🏔️",
+          "state": "Colorado",
+          "population": "715K",
+          "cold_brew_adoption": "Medium-High",
+          "competitive_landscape": "Fragmented — no dominant RTD brand",
+          "specialty_coffee_culture": "Active lifestyle driven",
+          "lcbm_score": 91,
+          "lcbm_insight": "Outdoor and active lifestyle dominates. The Fitness-Before-Work segment is 55% larger in Denver than the national average. Lead with the convenience-for-active-people angle.",
+          "recommended_angle": "Active Lifestyle",
+          "recommended_creative": "gym_grab",
+          "budget": 12000,
+          "predicted_cpa": 7.40,
+          "predicted_roas": 3.4,
+          "playbook": {
+            "awareness": "Active lifestyle content — trails, gyms, outdoor workouts",
+            "consideration": "Partner content with Denver hiking and outdoor brands",
+            "conversion": "Drive to REI Co-op and local grocery chains"
+          },
+          "conditions": {
+            "companion_positioning": {
+              "advantage": "Denver subscribers are likely outdoor enthusiasts — perfect companion use case",
+              "extra_tactic": "Trail run sponsorship with Ember cans as post-run refreshment"
+            },
+            "new_customer": {
+              "advantage": "Fitness crowd already primed from DTC campaigns",
+              "extra_tactic": "Partner with Denver fitness influencers for in-store launch"
+            }
+          }
+        },
+        {
+          "id": "brooklyn",
+          "name": "Brooklyn",
+          "emoji": "🌉",
+          "state": "New York",
+          "population": "2.6M",
+          "cold_brew_adoption": "Very High",
+          "competitive_landscape": "Saturated — highest competition but highest willingness-to-pay",
+          "specialty_coffee_culture": "Very strong — ingredient and origin savvy",
+          "lcbm_score": 89,
+          "lcbm_insight": "Brooklyn's audience DOES care about Yirgacheffe, unlike the national DTC audience. The roaster story resonates here. But premium fatigue is real — emphasize value-per-ounce vs competitors.",
+          "recommended_angle": "Roaster Story + Value",
+          "recommended_creative": "roasters_pick",
+          "budget": 18000,
+          "predicted_cpa": 11.20,
+          "predicted_roas": 2.4,
+          "playbook": {
+            "awareness": "Roaster heritage story — Ember's origin and craft process",
+            "consideration": "Value comparison — Ember can vs daily coffee shop spend",
+            "conversion": "Drive to local Brooklyn specialty stores and DTC"
+          },
+          "conditions": {
+            "companion_positioning": {
+              "advantage": "Brooklyn craft coffee lovers are the ideal subscriber → can crossover",
+              "extra_tactic": "Pop-up at Brooklyn coffee festivals with subscription bundle offer"
+            },
+            "new_customer": {
+              "advantage": "Brooklyn's coffee sophistication means product quality sells itself",
+              "extra_tactic": "Blind taste test events vs premium RTD competitors"
+            }
+          }
+        }
+      ],
+  
+      "blended_playbook": {
+        "title": "Three-Layer Market Approach",
+        "layers": [
+          {
+            "name": "DTC Retargeting",
+            "description": "People who bought online get targeted with retail availability ads",
+            "budget_pct": 30
+          },
+          {
+            "name": "Retail Awareness",
+            "description": "New local audiences who've never bought Ember online",
+            "budget_pct": 50
+          },
+          {
+            "name": "Brand Building",
+            "description": "City-specific content building local brand love",
+            "budget_pct": 20
+          }
+        ]
+      }
+    }
+  }

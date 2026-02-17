@@ -1,0 +1,519 @@
+/* Landing Page Styles */
+
+.landing-page {
+    min-height: 100vh;
+    background: #f8f9fa;
+  }
+  
+  /* Header */
+  .landing-header {
+    background: white;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 16px 24px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .landing-header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .landing-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .logo-icon {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .logo-icon .icon {
+    width: 24px;
+    height: 24px;
+    color: white;
+  }
+  
+  .logo-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+  }
+  
+  .logo-subtitle {
+    font-size: 13px;
+    color: #666;
+    margin-top: 2px;
+  }
+  
+  /* Hero */
+  .landing-hero {
+    background: linear-gradient(135deg, #f0f4ff 0%, #faf5ff 50%, #f0fdf4 100%);
+    padding: 80px 24px 60px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #6366f1;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+  
+  .badge-icon {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .hero-title {
+    font-size: 52px;
+    font-weight: 800;
+    color: #1a1a1a;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+  }
+  
+  .hero-highlight {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .hero-description {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Act Overview Pills */
+  .act-overview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .act-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+  
+  .act-pill-number {
+    font-size: 11px;
+    font-weight: 700;
+    color: #6366f1;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .act-pill-icon {
+    width: 16px;
+    height: 16px;
+    color: #6366f1;
+  }
+  
+  .act-pill-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a1a1a;
+  }
+  
+  .act-pill-arrow {
+    width: 16px;
+    height: 16px;
+    color: #999;
+    margin-left: 4px;
+  }
+  
+  /* Brands Section */
+  .brands-section {
+    padding: 60px 24px;
+  }
+  
+  .brands-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .brands-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+  }
+  
+  .brands-subtitle {
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 48px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+  }
+  
+  /* Brand Grid */
+  .brands-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  
+  /* Brand Card */
+  .brand-card {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 20px;
+    padding: 28px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .brand-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(
+      90deg,
+      var(--brand-primary),
+      var(--brand-secondary)
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .brand-card:hover,
+  .brand-card.hovered {
+    border-color: var(--brand-primary);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+    transform: translateY(-6px);
+  }
+  
+  .brand-card:hover::before,
+  .brand-card.hovered::before {
+    opacity: 1;
+  }
+  
+  /* Card Header */
+  .brand-card-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .brand-emoji-wrap {
+    width: 56px;
+    height: 56px;
+    background: var(--brand-light, #f5f5f5);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .brand-emoji {
+    font-size: 28px;
+  }
+  
+  .brand-name {
+    font-size: 20px;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+  }
+  
+  .brand-industry {
+    font-size: 13px;
+    color: #666;
+    font-weight: 500;
+  }
+  
+  /* Tension Badge */
+  .tension-badge {
+    padding: 14px 16px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .tension-vs {
+    font-size: 11px;
+    font-weight: 700;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 6px;
+  }
+  
+  .tension-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+    line-height: 1.4;
+    font-style: italic;
+  }
+  
+  /* Products */
+  .products-section {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  
+  .product-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .product-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .product-item.established .product-label {
+    color: #666;
+  }
+  
+  .product-item.new .product-label {
+    color: #6366f1;
+  }
+  
+  .product-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.3;
+  }
+  
+  .product-meta {
+    font-size: 12px;
+    color: #888;
+    line-height: 1.4;
+  }
+  
+  .product-arrow {
+    font-size: 20px;
+    color: #999;
+    flex-shrink: 0;
+    padding-top: 12px;
+  }
+  
+  /* Act Previews */
+  .act-previews {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .act-preview-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .act-preview-num {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--brand-primary, #6366f1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
+    min-width: 40px;
+    padding-top: 1px;
+  }
+  
+  .act-preview-q {
+    font-size: 13px;
+    color: #555;
+    line-height: 1.4;
+    font-style: italic;
+  }
+  
+  /* Brand CTA */
+  .brand-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    background: linear-gradient(
+      135deg,
+      var(--brand-primary),
+      var(--brand-secondary)
+    );
+    border-radius: 12px;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: auto;
+    transition: all 0.3s ease;
+  }
+  
+  .brand-card:hover .brand-cta {
+    filter: brightness(1.1);
+  }
+  
+  .cta-arrow {
+    width: 18px;
+    height: 18px;
+    transition: transform 0.3s ease;
+  }
+  
+  .brand-card:hover .cta-arrow {
+    transform: translateX(4px);
+  }
+  
+  /* Footer */
+  .landing-footer {
+    background: white;
+    border-top: 1px solid #e0e0e0;
+    padding: 40px 24px;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  
+  .footer-models {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  
+  .footer-model {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .model-icon {
+    width: 24px;
+    height: 24px;
+    color: #6366f1;
+  }
+  
+  .model-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a1a;
+  }
+  
+  .model-desc {
+    font-size: 12px;
+    color: #888;
+  }
+  
+  .footer-divider {
+    width: 1px;
+    height: 40px;
+    background: #e0e0e0;
+  }
+  
+  .footer-copy {
+    font-size: 13px;
+    color: #aaa;
+  }
+  
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .brands-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .hero-title {
+      font-size: 40px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .brands-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .hero-title {
+      font-size: 32px;
+    }
+  
+    .act-overview {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .act-pill-arrow {
+      display: none;
+    }
+  
+    .footer-models {
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .footer-divider {
+      width: 80px;
+      height: 1px;
+    }
+  }

@@ -1,0 +1,563 @@
+{
+    "brand": {
+      "id": "vela",
+      "name": "Vela Skincare",
+      "emoji": "✨",
+      "industry": "Clean Beauty",
+      "tagline": "Science you can trust. Skin you'll love.",
+      "established_product": {
+        "name": "Vitamin C Serum",
+        "price": "$48 (1oz)",
+        "customers": 35000,
+        "monthly_spend": "$90K/month Meta + Google",
+        "rating": 4.9
+      },
+      "new_product": {
+        "name": "Body Care Line",
+        "price": "$34 lotion / $38 oil",
+        "channel": "DTC + Sephora",
+        "launch": "Spring"
+      },
+      "tension": "Ingredient researchers vs sensory buyers",
+      "colors": {
+        "primary": "#C9A96E",
+        "secondary": "#E8D5B7",
+        "accent": "#6B4F3A",
+        "light": "#FFF9F5",
+        "gradient_from": "#C9A96E",
+        "gradient_to": "#E8D5B7"
+      }
+    },
+  
+    "act1": {
+      "title": "Audience Discovery",
+      "question": "Our serum customers read ingredient lists. Body care buyers sniff and squeeze.",
+      "context": "Vela connects Shopify + Meta + Klaviyo. LCBM analyzes 35K serum customers for body care propensity.",
+      "existing_customers": 35000,
+      "crossover_rate": 0.45,
+      "crossover_count": 15750,
+  
+      "bridge_segment": {
+        "name": "Clean Beauty Crossover",
+        "size": 15000,
+        "fit_score": 91,
+        "description": "Serum customers who already buy clean body care from Nécessaire, Osea, Drunk Elephant Body",
+        "insight": "They'd switch to Vela in a heartbeat if they knew it existed"
+      },
+  
+      "social_agents_insight": "Your serum customers will convert easily — they already trust you. The real opportunity is the self-care ritualist who spends $200/month on bath and body but has never bought a face serum. Body care is your Trojan horse into their routine.",
+  
+      "new_audiences": [
+        {
+          "id": "luxury_ritualists",
+          "name": "Luxury Self-Care Ritualists",
+          "size": "2.8M",
+          "fit_score": 93,
+          "icon": "🛁",
+          "demographics": "Women 28-45, HHI $80K+",
+          "psychographics": "Bath and body is a sacred ritual, spends $200+/month on self-care, values premium ingredients",
+          "affinities": [
+            { "name": "Luxury Bath & Body Content", "strength": 96, "reason": "Self-care is a lifestyle identity" },
+            { "name": "Wellness & Spa Content", "strength": 89, "reason": "Extends ritual beyond the bathroom" },
+            { "name": "Premium Brand Reviews", "strength": 84, "reason": "Researches before committing to luxury" }
+          ],
+          "top_content": ["Sunday reset routines", "Luxury haul unboxings", "Spa-at-home guides"],
+          "recommended_angle": "Ritual elevation messaging",
+          "compatible_strategies": ["trojan_horse", "cross_sell"]
+        },
+        {
+          "id": "post_workout",
+          "name": "Post-Workout Skincare",
+          "size": "1.6M",
+          "fit_score": 86,
+          "icon": "🏃",
+          "demographics": "Active women 22-38",
+          "psychographics": "Gym-to-shower routine, wants fast-absorbing clean products, efficiency-driven",
+          "affinities": [
+            { "name": "Fitness & Recovery Content", "strength": 88, "reason": "Post-workout routine is sacred" },
+            { "name": "Clean Beauty Reviews", "strength": 82, "reason": "Health-conscious extends to skincare" },
+            { "name": "Nutrition & Wellness", "strength": 79, "reason": "Holistic health approach" }
+          ],
+          "top_content": ["Post-workout routines", "Gym bag essentials", "Clean beauty for active lives"],
+          "recommended_angle": "Fast-absorbing, clean, gym-to-meeting ready",
+          "compatible_strategies": ["trojan_horse", "cross_sell"]
+        },
+        {
+          "id": "new_moms",
+          "name": "New Moms",
+          "size": "2.1M",
+          "fit_score": 88,
+          "icon": "👶",
+          "demographics": "Mothers 25-40, first 2 years postpartum",
+          "psychographics": "Ingredient-obsessed for safety, time-poor but self-care starved, gentle and clean non-negotiable",
+          "affinities": [
+            { "name": "Mom Lifestyle Content", "strength": 91, "reason": "Self-care as essential not luxury" },
+            { "name": "Clean & Safe Products", "strength": 94, "reason": "Safety is the #1 purchase driver" },
+            { "name": "Postpartum Recovery", "strength": 86, "reason": "Skin changes drive product exploration" }
+          ],
+          "top_content": ["Safe postpartum skincare", "5-minute self-care routines", "Clean ingredient guides"],
+          "recommended_angle": "Safe, gentle, clean — for you and your family",
+          "compatible_strategies": ["trojan_horse"]
+        },
+        {
+          "id": "ingredient_educated",
+          "name": "Ingredient-Educated Shoppers",
+          "size": "1.9M",
+          "fit_score": 89,
+          "icon": "🔬",
+          "demographics": "Women 25-42, college educated",
+          "psychographics": "Reads every ingredient list, follows dermatologists on social, won't buy without knowing what's in it",
+          "affinities": [
+            { "name": "Dermatologist Content", "strength": 93, "reason": "Clinical authority is the trust signal" },
+            { "name": "Skincare Science Explainers", "strength": 90, "reason": "Loves understanding how things work" },
+            { "name": "EWG & Clean Beauty Databases", "strength": 85, "reason": "Actively researches ingredient safety" }
+          ],
+          "top_content": ["Ingredient breakdowns", "Dermatologist Q&As", "Clean vs toxic ingredient comparisons"],
+          "recommended_angle": "Ingredient transparency and clinical backing",
+          "compatible_strategies": ["cross_sell", "trojan_horse"]
+        }
+      ],
+  
+      "strategies": [
+        {
+          "id": "cross_sell",
+          "label": "Convert Existing Customers",
+          "emoji": "💛",
+          "description": "Focus on the 45% crossover opportunity. Convert serum loyalists to full-body Vela routines with trusted brand messaging.",
+          "target": "Existing serum customers + clean beauty crossover segment",
+          "pitch": "Complete your Vela routine — now for your body",
+          "risks": "Limited new customer acquisition, ceiling at existing base size",
+          "impacts": {
+            "act2_creative_filter": "clinical",
+            "act2_recommended": "full_routine",
+            "act3_scenario": "cross_sell_track",
+            "act3_cpa": 6.00,
+            "act3_roas": 4.2,
+            "act3_aov": 72,
+            "act3_upsell_rate": "4%",
+            "act3_crisis": "upsell_not_converting",
+            "act4_angle": "clinical_positioning"
+          }
+        },
+        {
+          "id": "trojan_horse",
+          "label": "Body Care as Acquisition Funnel",
+          "emoji": "🐴",
+          "description": "Use sensory body care to acquire self-care ritualists who'd never start with a $48 serum. Body care is the entry point.",
+          "target": "Luxury Self-Care Ritualists, Post-Workout crowd, New Moms",
+          "pitch": "90-second self-care that changes your entire routine",
+          "risks": "New customer acquisition is harder, requires new creative language for Vela",
+          "impacts": {
+            "act2_creative_filter": "sensory",
+            "act2_recommended": "self_care_90",
+            "act3_scenario": "new_audience_track",
+            "act3_cpa": 18.00,
+            "act3_roas": 2.8,
+            "act3_aov": 36,
+            "act3_upsell_rate": "4%",
+            "act3_crisis": "upsell_not_converting",
+            "act4_angle": "sensory_positioning"
+          }
+        }
+      ]
+    },
+  
+    "act2": {
+      "title": "Creative Bake-off",
+      "question": "Ingredient breakdowns won't sell body lotion.",
+      "context": "12 creatives submitted. Some are Vela's clinical style, others lean sensory.",
+  
+      "creatives": [
+        {
+          "id": "full_routine",
+          "name": "Full Routine Carousel",
+          "type": "CAROUSEL",
+          "angle": "clinical",
+          "thumbnail": "🔄",
+          "description": "Serum + body oil shown as a morning-to-night complete system",
+          "hook": "Your complete Vela ritual — face to body",
+          "scores": {
+            "existing_customers": 8.6,
+            "new_audiences": 4.1
+          },
+          "best_for": "existing_customers",
+          "recommended_for_strategy": "cross_sell",
+          "why_it_works": "Existing customers already trust Vela. Showing the full system drives AOV.",
+          "why_it_fails": "New audiences haven't bought the serum — the 'complete routine' means nothing yet."
+        },
+        {
+          "id": "self_care_90",
+          "name": "90-Second Self-Care",
+          "type": "VIDEO",
+          "angle": "sensory",
+          "thumbnail": "🌸",
+          "description": "Hands applying body oil, steam, soft lighting, ASMR texture sounds",
+          "hook": "90 seconds. That's all your skin needs.",
+          "scores": {
+            "existing_customers": 6.8,
+            "new_audiences": 9.1
+          },
+          "best_for": "new_audiences",
+          "recommended_for_strategy": "trojan_horse",
+          "why_it_works": "Vela's highest-scoring creative ever. Pure sensory appeal for ritualists.",
+          "why_it_fails": "Existing customers want ingredient validation, not just aesthetics."
+        },
+        {
+          "id": "ingredient_deepdive",
+          "name": "Ingredient Deep-Dive",
+          "type": "STATIC",
+          "angle": "clinical",
+          "thumbnail": "🔬",
+          "description": "Clinical breakdown of key actives in body lotion — ceramides, peptides, vitamin E",
+          "hook": "What's actually in your body lotion? (Most brands won't tell you)",
+          "scores": {
+            "existing_customers": 8.3,
+            "new_audiences": 3.2
+          },
+          "best_for": "existing_customers",
+          "recommended_for_strategy": "cross_sell",
+          "why_it_works": "Serum customers are ingredient obsessives. This is their love language.",
+          "why_it_fails": "Clinical aesthetic actively repels the audience that buys for sensory pleasure."
+        },
+        {
+          "id": "texture_shot",
+          "name": "The Texture Shot",
+          "type": "VIDEO",
+          "angle": "sensory",
+          "thumbnail": "💧",
+          "description": "Extreme close-up of oil texture, skin absorption, glow result",
+          "hook": "Watch what happens to your skin in 60 seconds",
+          "scores": {
+            "existing_customers": 7.1,
+            "new_audiences": 8.7
+          },
+          "best_for": "new_audiences",
+          "recommended_for_strategy": "trojan_horse",
+          "why_it_works": "Visual ASMR drives impulse. Ritualists buy with eyes and skin, not brain.",
+          "why_it_fails": "Too product-focused without clinical backing for ingredient-savvy buyers."
+        },
+        {
+          "id": "dermatologist_review",
+          "name": "Derm Approved",
+          "type": "VIDEO",
+          "angle": "clinical",
+          "thumbnail": "👩‍⚕️",
+          "description": "Dermatologist breaks down why the body oil formulation is superior",
+          "hook": "A dermatologist reviewed our formula. Here's what she found.",
+          "scores": {
+            "existing_customers": 8.8,
+            "new_audiences": 5.4
+          },
+          "best_for": "existing_customers",
+          "recommended_for_strategy": "cross_sell",
+          "why_it_works": "Medical authority is the ultimate trust signal for Vela's existing base.",
+          "why_it_fails": "Self-care ritualists don't need a derm to tell them something feels good."
+        },
+        {
+          "id": "sunday_reset",
+          "name": "Sunday Reset Ritual",
+          "type": "VIDEO",
+          "angle": "sensory",
+          "thumbnail": "☀️",
+          "description": "Full Sunday self-care routine — bath, body oil, face serum, journaling, tea",
+          "hook": "This is what a real Sunday reset looks like",
+          "scores": {
+            "existing_customers": 7.4,
+            "new_audiences": 8.9
+          },
+          "best_for": "new_audiences",
+          "recommended_for_strategy": "trojan_horse",
+          "why_it_works": "Ritual content is aspirational. Luxury ritualists see themselves in this.",
+          "why_it_fails": "Too lifestyle-heavy for existing customers who want product specifics."
+        }
+      ],
+  
+      "test_plan": {
+        "budget": 6000,
+        "duration_hours": 48,
+        "cells_per_track": 3,
+        "tiktok_track": true,
+        "scenarios": {
+          "cross_sell": {
+            "cells": [
+              { "creative": "full_routine", "audience": "Existing Customers", "budget": 2000 },
+              { "creative": "ingredient_deepdive", "audience": "Clean Beauty Crossover", "budget": 2000 },
+              { "creative": "dermatologist_review", "audience": "Ingredient-Educated Shoppers", "budget": 2000 }
+            ],
+            "landing_page": "Full routine page with ingredient breakdown and serum cross-sell",
+            "stop_rule": "CPA > $15 after 50 clicks",
+            "promote_rule": "ROAS > 3x after $800 spend"
+          },
+          "trojan_horse": {
+            "cells": [
+              { "creative": "self_care_90", "audience": "Luxury Self-Care Ritualists", "budget": 2000 },
+              { "creative": "sunday_reset", "audience": "Luxury Self-Care Ritualists", "budget": 2000 },
+              { "creative": "texture_shot", "audience": "Post-Workout Skincare", "budget": 2000 }
+            ],
+            "landing_page": "Sensory landing page — texture, scent, feel. No clinical language.",
+            "stop_rule": "CPA > $25 after 50 clicks",
+            "promote_rule": "ROAS > 2.5x after $800 spend",
+            "tiktok_note": "90-Second Self-Care video is tailor-made for TikTok — first TikTok campaign for Vela"
+          }
+        }
+      }
+    },
+  
+    "act3": {
+      "title": "Performance Diagnosis",
+      "question": "Body oil is outselling the serum. But something's off with the funnel.",
+      "context": "Six weeks in. Both tracks are profitable. But the strategic goal isn't being met.",
+      "weeks_running": 6,
+  
+      "scenarios": {
+        "cross_sell": {
+          "tracks": [
+            {
+              "name": "Existing Customers",
+              "cpa": 6.00,
+              "roas": 4.2,
+              "aov": 72,
+              "upsell_rate": "4%",
+              "status": "PROFITABLE",
+              "insight": "High ROAS but limited scale — ceiling is the existing customer base"
+            },
+            {
+              "name": "New Audiences",
+              "cpa": 18.00,
+              "roas": 2.8,
+              "aov": 36,
+              "upsell_rate": "2%",
+              "status": "UNDERPERFORMING",
+              "insight": "Clinical messaging doesn't convert sensory buyers"
+            }
+          ],
+          "diagnosis": {
+            "type": "TONE_MISMATCH",
+            "title": "Tonal Mismatch in Post-Purchase",
+            "not_the_problem": "Acquisition ads are working — both tracks are profitable",
+            "root_cause": "The post-purchase email sequence immediately pushes the serum with ingredient messaging. But customers acquired through routine content expected a lifestyle brand, not a chemistry class.",
+            "funnel_insight": "Post-purchase survey: 'I loved the product but felt overwhelmed by the follow-up emails. Too scientific for what I thought was a self-care brand.'",
+            "social_agents": "You acquired them with a spa vibe and then emailed them a chemistry lesson. Bridge the gap — show them the serum as the next step in the ritual, not a separate clinical product."
+          },
+          "recovery_strategies": [
+            {
+              "id": "ritual_bridge",
+              "label": "Complete the Ritual",
+              "emoji": "🌙",
+              "description": "Rewrite post-purchase sequence. Position serum as the final, elevated step in the self-care ritual — not a separate product.",
+              "transsuasion_copy": "You found your body ritual. Now complete it. Meet the serum that started it all.",
+              "email_sequence": "Day 1: Welcome to the ritual. Day 3: Your body is glowing — your face deserves the same. Day 7: The complete Vela ritual revealed.",
+              "expected_lift": "Upsell rate 4% → 12-15%",
+              "impact_act4": "ritual_positioning",
+              "impacts": {
+                "act4_positioning": "ritual",
+                "act4_sephora_angle": "complete_ritual",
+                "act4_email_optimized": true
+              }
+            },
+            {
+              "id": "segment_harder",
+              "label": "Segment by Purchase Intent",
+              "emoji": "🎯",
+              "description": "Split email flows completely. Clinical buyers get ingredient-forward sequence. Sensory buyers get ritual-forward sequence.",
+              "transsuasion_copy": "Clinical path: 'The science behind your glow.' Ritual path: 'Your 3-step ritual is almost complete.'",
+              "expected_lift": "Overall upsell rate 4% → 9-11%",
+              "impact_act4": "dual_messaging",
+              "impacts": {
+                "act4_positioning": "dual",
+                "act4_sephora_angle": "dual_track",
+                "act4_email_optimized": true
+              }
+            }
+          ]
+        },
+        "trojan_horse": {
+          "tracks": [
+            {
+              "name": "New Audiences (Body Care Entry)",
+              "cpa": 18.00,
+              "roas": 2.8,
+              "aov": 36,
+              "upsell_rate": "4%",
+              "status": "PROFITABLE",
+              "insight": "Trojan horse is working for acquisition, but serum upsell is underperforming"
+            },
+            {
+              "name": "Existing Customers (Cross-sell)",
+              "cpa": 6.00,
+              "roas": 4.2,
+              "aov": 72,
+              "upsell_rate": "38%",
+              "status": "WINNING",
+              "insight": "Existing customers convert to body care AND come back for more serum"
+            }
+          ],
+          "diagnosis": {
+            "type": "JOURNEY_GAP",
+            "title": "Post-Purchase Journey Gap",
+            "not_the_problem": "The ads are working — body oil is outselling the serum in volume",
+            "root_cause": "New body care customers were acquired through sensory content but immediately receive clinical serum messaging. The tonal whiplash is killing the upsell.",
+            "funnel_insight": "Only 4% of new body care buyers add the serum within 30 days. Email open rates drop 60% after Day 3 of post-purchase sequence.",
+            "social_agents": "You acquired them with a spa vibe and then emailed them a chemistry lesson. Bridge the gap — show them the serum as the next step in the ritual, not a separate product."
+          },
+          "recovery_strategies": [
+            {
+              "id": "ritual_bridge",
+              "label": "Complete the Ritual",
+              "emoji": "🌙",
+              "description": "Rewrite the post-purchase journey. The serum is positioned as 'the final step in the ritual' not a separate clinical product.",
+              "transsuasion_copy": "You found your body ritual. Now complete it.",
+              "email_sequence": "Day 1: Welcome to Vela. Day 3: Your skin is glowing from the outside. Now let's work from within. Day 7: Meet the serum that started everything.",
+              "expected_lift": "Upsell rate 4% → 12-15%",
+              "impact_act4": "ritual_positioning",
+              "impacts": {
+                "act4_positioning": "ritual",
+                "act4_sephora_angle": "complete_ritual",
+                "act4_email_optimized": true
+              }
+            },
+            {
+              "id": "bundle_entry",
+              "label": "Bundle as Entry Point",
+              "emoji": "🎁",
+              "description": "Create a discovery bundle — body oil + serum sample at $52. Lower commitment, introduces serum organically.",
+              "transsuasion_copy": "Start with the body. Fall in love with the face.",
+              "expected_lift": "Bundle conversion 18%, serum full-size repurchase 34%",
+              "impact_act4": "bundle_positioning",
+              "impacts": {
+                "act4_positioning": "bundle",
+                "act4_sephora_angle": "bundle_display",
+                "act4_email_optimized": false
+              }
+            }
+          ]
+        }
+      }
+    },
+  
+    "act4": {
+      "title": "Regional Expansion",
+      "question": "National DTC works. Now we're launching in Sephora in 3 regions.",
+      "context": "Vela is entering Sephora doors in LA, NYC, and Miami. Each is a different beauty market.",
+  
+      "markets": [
+        {
+          "id": "la",
+          "name": "Los Angeles",
+          "emoji": "🌴",
+          "state": "California",
+          "population": "3.9M",
+          "beauty_culture": "Clean beauty is mainstream — highly competitive",
+          "competitive_landscape": "Local clean brands dominate. Clinical positioning is commoditized.",
+          "lcbm_score": 88,
+          "lcbm_insight": "Vela's clinical positioning is overcrowded in LA. Lead with the sensory angle that won for new audiences. The 90-Second Self-Care creative adapted for in-store discovery.",
+          "recommended_angle": "Sensory & Ritual",
+          "recommended_creative": "self_care_90",
+          "budget": 20000,
+          "predicted_cpa": 16.50,
+          "predicted_roas": 2.6,
+          "sephora_strategy": "In-store sampling stations with texture-first experience. QR code to 90-second ritual video.",
+          "playbook": {
+            "awareness": "Ritual-forward social content targeting LA wellness culture",
+            "consideration": "In-store Sephora discovery — testers and texture experience",
+            "conversion": "Bundle offer — body oil + serum sample at launch price"
+          },
+          "conditions": {
+            "ritual_positioning": {
+              "advantage": "Ritual language perfectly matched to LA wellness culture",
+              "extra_tactic": "Partner with LA wellness studios for sampling events"
+            },
+            "dual_messaging": {
+              "advantage": "Segment LA ads — clinical for WeHo, sensory for Silver Lake",
+              "extra_tactic": "Neighborhood-targeted social ads with different creative per area"
+            }
+          }
+        },
+        {
+          "id": "nyc",
+          "name": "New York City",
+          "emoji": "🗽",
+          "state": "New York",
+          "population": "8.3M",
+          "beauty_culture": "Ingredient-savvy, time-poor, premium-tolerant",
+          "competitive_landscape": "Saturated premium market but high willingness to pay for proven formulas",
+          "lcbm_score": 92,
+          "lcbm_insight": "NYC is the one market where Vela's original clinical positioning resonates with cold audiences. Ingredient-savvy shoppers here do care about ceramides. But premium fatigue is real — emphasize value-per-ounce vs competitors.",
+          "recommended_angle": "Clinical + Value",
+          "recommended_creative": "ingredient_deepdive",
+          "budget": 25000,
+          "predicted_cpa": 14.20,
+          "predicted_roas": 3.1,
+          "sephora_strategy": "Ingredient comparison cards in-store. 'What's actually in your body lotion?' shelf talkers.",
+          "playbook": {
+            "awareness": "Ingredient education content — why Vela's formula is different",
+            "consideration": "Value comparison — cost-per-application vs premium competitors",
+            "conversion": "Dermatologist endorsement display + clinical proof points"
+          },
+          "conditions": {
+            "ritual_positioning": {
+              "advantage": "NYC professionals respond to ritual + efficiency combination",
+              "extra_tactic": "Morning routine content series for NYC commuters"
+            },
+            "bundle_positioning": {
+              "advantage": "NYC loves a complete routine — bundle displays drive higher AOV",
+              "extra_tactic": "Sephora endcap display featuring complete Vela ritual bundle"
+            }
+          }
+        },
+        {
+          "id": "miami",
+          "name": "Miami",
+          "emoji": "🌊",
+          "state": "Florida",
+          "population": "470K",
+          "beauty_culture": "Humidity-driven, lightweight, outdoor-active",
+          "competitive_landscape": "Tropical skincare brands dominate. Heavy products lose immediately.",
+          "lcbm_score": 85,
+          "lcbm_insight": "Humidity-driven concerns mean 'oil' sounds heavy and wrong for Miami. The body oil needs repositioning — 'Weightless hydration that actually works in Miami heat.' Body lotion leads here, not the oil.",
+          "recommended_angle": "Lightweight & Climate-Adapted",
+          "recommended_creative": "texture_shot",
+          "budget": 15000,
+          "predicted_cpa": 19.80,
+          "predicted_roas": 2.2,
+          "sephora_strategy": "Climate-specific messaging — 'Made for Miami skin.' Lightweight texture demos in-store.",
+          "playbook": {
+            "awareness": "Miami-specific creative — beach, humidity, lightweight skincare",
+            "consideration": "Texture videos showing fast absorption in warm weather",
+            "conversion": "Lotion leads, oil repositioned as 'weightless glow oil'"
+          },
+          "conditions": {
+            "ritual_positioning": {
+              "advantage": "Miami's outdoor lifestyle creates a natural post-beach ritual opportunity",
+              "extra_tactic": "Beach recovery ritual campaign — post-sun body oil positioning"
+            },
+            "dual_messaging": {
+              "advantage": "Split Miami — body lotion for daily use, oil for special occasions",
+              "extra_tactic": "Two separate Miami campaigns with humidity-specific messaging"
+            }
+          }
+        }
+      ],
+  
+      "blended_playbook": {
+        "title": "DTC + Sephora Omnichannel Approach",
+        "layers": [
+          {
+            "name": "Sephora Drive-to-Store",
+            "description": "Targeted ads driving to nearest Sephora location with in-store offer",
+            "budget_pct": 40
+          },
+          {
+            "name": "DTC Retargeting",
+            "description": "Online browsers retargeted with DTC offer + subscription discount",
+            "budget_pct": 35
+          },
+          {
+            "name": "Brand Building",
+            "description": "City-specific ritual content building Vela as the local clean beauty brand",
+            "budget_pct": 25
+          }
+        ]
+      }
+    }
+  }

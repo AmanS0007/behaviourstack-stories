@@ -1,0 +1,595 @@
+{
+    "brand": {
+      "id": "peakform",
+      "name": "Peak Form",
+      "emoji": "💪",
+      "industry": "Home Fitness",
+      "tagline": "Your body. Your gym. Your rules.",
+      "established_product": {
+        "name": "Resistance Bands & Accessories",
+        "price": "$25-$45",
+        "customers": 60000,
+        "monthly_spend": "$100K/month Meta",
+        "rating": 4.7
+      },
+      "new_product": {
+        "name": "Smart Jump Rope with Companion App",
+        "price": "$129",
+        "channel": "DTC + Dick's Sporting Goods",
+        "launch": "Q1"
+      },
+      "tension": "Budget simple vs premium tech",
+      "colors": {
+        "primary": "#E63946",
+        "secondary": "#1D3557",
+        "accent": "#457B9D",
+        "light": "#F8F9FA",
+        "gradient_from": "#E63946",
+        "gradient_to": "#1D3557"
+      }
+    },
+  
+    "act1": {
+      "title": "Audience Discovery",
+      "question": "Our customers love us because we're cheap and simple. Will they pay $129 for a rope?",
+      "context": "Peak Form connects Shopify + Meta. LCBM analyzes 60K band customers for smart fitness device propensity.",
+      "existing_customers": 60000,
+      "crossover_rate": 0.15,
+      "crossover_count": 9000,
+  
+      "bridge_segment": {
+        "name": "Tech-Curious Athletes",
+        "size": 9000,
+        "fit_score": 79,
+        "description": "Band customers who also own an Apple Watch or Whoop",
+        "insight": "They like simple equipment but track everything digitally — the bridge between worlds"
+      },
+  
+      "social_agents_insight": "Your band customers chose you BECAUSE you're not a tech company. Launching a $129 smart device might confuse them. But the jump rope community and HIIT crowd have been waiting for exactly this product — they just don't know Peak Form.",
+  
+      "new_audiences": [
+        {
+          "id": "crossfit_home",
+          "name": "CrossFit Home Gymers",
+          "size": "1.4M",
+          "fit_score": 89,
+          "icon": "🏋️",
+          "demographics": "Men and women 25-42, suburban homeowners",
+          "psychographics": "Competitive even in solo training, invested in home gym, performance-obsessed",
+          "affinities": [
+            { "name": "CrossFit Content", "strength": 95, "reason": "Jump rope is a core CrossFit skill (double-unders)" },
+            { "name": "Home Gym Setup Content", "strength": 88, "reason": "Already invested in premium home equipment" },
+            { "name": "Performance Tracking", "strength": 84, "reason": "Tracks every lift, every PR, every rep" }
+          ],
+          "top_content": ["WOD videos", "Home gym tours", "PR celebration content"],
+          "recommended_angle": "Performance data and competitive tracking",
+          "compatible_strategies": ["performance_first", "community_first"]
+        },
+        {
+          "id": "hiit_enthusiasts",
+          "name": "HIIT Enthusiasts",
+          "size": "2.2M",
+          "fit_score": 86,
+          "icon": "⚡",
+          "demographics": "Women 22-40, fitness-forward lifestyle",
+          "psychographics": "Cardio-focused, class-going mentality at home, loves interval training",
+          "affinities": [
+            { "name": "HIIT Workout Videos", "strength": 91, "reason": "Jump rope is a perfect HIIT tool" },
+            { "name": "Fitness App Content", "strength": 85, "reason": "Uses apps to structure workouts" },
+            { "name": "Before and After Content", "strength": 80, "reason": "Motivated by visible transformation" }
+          ],
+          "top_content": ["HIIT routines", "Calorie burn comparisons", "At-home cardio alternatives"],
+          "recommended_angle": "Maximum calorie burn in minimum time",
+          "compatible_strategies": ["performance_first", "community_first"]
+        },
+        {
+          "id": "fitness_app_users",
+          "name": "Fitness App Power Users",
+          "size": "3.1M",
+          "fit_score": 82,
+          "icon": "📱",
+          "demographics": "Mixed gender 25-45, tech-forward",
+          "psychographics": "Data-obsessed, quantified self movement, tracks sleep, steps, HRV",
+          "affinities": [
+            { "name": "Wearable Tech Content", "strength": 88, "reason": "Already bought into connected fitness" },
+            { "name": "Fitness Data & Analytics", "strength": 92, "reason": "Makes decisions based on data" },
+            { "name": "Biohacking Content", "strength": 79, "reason": "Always optimizing performance" }
+          ],
+          "top_content": ["Fitness app reviews", "Data-driven training content", "Recovery optimization"],
+          "recommended_angle": "The missing data layer for your fitness stack",
+          "compatible_strategies": ["performance_first"]
+        },
+        {
+          "id": "jump_rope_community",
+          "name": "Jump Rope Community",
+          "size": "800K",
+          "fit_score": 97,
+          "icon": "🪢",
+          "demographics": "Mixed gender 16-45, highly engaged niche",
+          "psychographics": "Jump rope is an identity, not just exercise. Passionate, community-driven, skill-obsessed",
+          "affinities": [
+            { "name": "Jump Rope Trick Videos", "strength": 98, "reason": "This IS their community" },
+            { "name": "Skill Progression Content", "strength": 94, "reason": "Always leveling up their technique" },
+            { "name": "Jump Rope Product Reviews", "strength": 91, "reason": "Passionate about gear quality" }
+          ],
+          "top_content": ["Double-under tutorials", "Jump rope trick combos", "Equipment reviews"],
+          "recommended_angle": "The smartest rope the community has ever seen",
+          "compatible_strategies": ["community_first", "performance_first"]
+        }
+      ],
+  
+      "strategies": [
+        {
+          "id": "performance_first",
+          "label": "Performance & Data First",
+          "emoji": "📊",
+          "description": "Lead with the data story. Target fitness app users, CrossFit crowd, and HIIT enthusiasts who already track everything and want to add jump rope data to their stack.",
+          "target": "CrossFit Home Gymers, HIIT Enthusiasts, Fitness App Power Users",
+          "pitch": "Beat Your Yesterday — track every rep, every RPM, every streak",
+          "risks": "HIIT and app users may churn if they don't build the jump rope habit first",
+          "impacts": {
+            "act2_creative_filter": "data",
+            "act2_recommended": "beat_yesterday",
+            "act3_scenario": "performance_track",
+            "act3_cpa_jumprope": 22,
+            "act3_roas_jumprope": 4.1,
+            "act3_retention_jumprope": "68%",
+            "act3_cpa_hiit": 38,
+            "act3_roas_hiit": 1.9,
+            "act3_retention_hiit": "31%",
+            "act3_crisis": "habit_formation",
+            "act4_angle": "data_performance"
+          }
+        },
+        {
+          "id": "community_first",
+          "label": "Jump Rope Community First",
+          "emoji": "🪢",
+          "description": "Go deep with the jump rope community first. 800K passionate, engaged people who've been waiting for a smart rope. Let them become ambassadors before scaling.",
+          "target": "Jump Rope Community + CrossFit Home Gymers",
+          "pitch": "Built for the jump rope community. Finally.",
+          "risks": "Smaller initial reach, community can be critical if product doesn't deliver",
+          "impacts": {
+            "act2_creative_filter": "community",
+            "act2_recommended": "unboxing_first",
+            "act3_scenario": "community_track",
+            "act3_cpa_jumprope": 22,
+            "act3_roas_jumprope": 4.1,
+            "act3_retention_jumprope": "68%",
+            "act3_cpa_crossfit": 31,
+            "act3_roas_crossfit": 2.8,
+            "act3_retention_crossfit": "52%",
+            "act3_crisis": "scale_ceiling",
+            "act4_angle": "community_ambassador"
+          }
+        }
+      ]
+    },
+  
+    "act2": {
+      "title": "Creative Bake-off",
+      "question": "Our best UGC creator does living-room band workouts. That won't sell a smart rope.",
+      "context": "12 creatives submitted. Some use Peak Form's accessible style, others go hard on tech and data.",
+  
+      "creatives": [
+        {
+          "id": "beat_yesterday",
+          "name": "Beat Your Yesterday",
+          "type": "VIDEO",
+          "angle": "data",
+          "thumbnail": "📈",
+          "description": "Split-screen Day 1 vs Day 30. RPM data climbing, streak counter growing, visible transformation",
+          "hook": "Day 1: 45 RPM. Day 30: 142 RPM. Same rope. Different you.",
+          "scores": {
+            "existing_customers": 6.8,
+            "new_audiences": 9.0
+          },
+          "best_for": "new_audiences",
+          "recommended_for_strategy": "performance_first",
+          "why_it_works": "Taps into quantified-self motivation. Data progression is viscerally satisfying.",
+          "why_it_fails": "Existing band customers don't identify with data-heavy fitness culture."
+        },
+        {
+          "id": "unboxing_first",
+          "name": "First Session Unboxing",
+          "type": "VIDEO",
+          "angle": "community",
+          "thumbnail": "📦",
+          "description": "Raw unboxing, first cable setup, first 60 seconds of jumping, app pairing",
+          "hook": "I finally got the Peak Form smart rope. First impressions...",
+          "scores": {
+            "existing_customers": 7.1,
+            "new_audiences": 8.7
+          },
+          "best_for": "jump_rope_community",
+          "recommended_for_strategy": "community_first",
+          "why_it_works": "Jump rope community wants to see the product in action, not a lifestyle pitch. Authenticity wins.",
+          "why_it_fails": "Too product-focused for lifestyle audiences who need inspiration first."
+        },
+        {
+          "id": "one_more_thing",
+          "name": "One More Thing",
+          "type": "VIDEO",
+          "angle": "bridge",
+          "thumbnail": "🎯",
+          "description": "Familiar Peak Form creator adds smart rope to her band routine, shows app stats after",
+          "hook": "I added one thing to my Peak Form routine and my cardio completely changed",
+          "scores": {
+            "existing_customers": 7.2,
+            "new_audiences": 5.8
+          },
+          "best_for": "existing_customers",
+          "recommended_for_strategy": "performance_first",
+          "why_it_works": "Familiar face bridges the gap between bands and rope for existing fans.",
+          "why_it_fails": "New audiences don't know the creator. No compelling hook for cold traffic."
+        },
+        {
+          "id": "double_under_tutorial",
+          "name": "Double Under in 7 Days",
+          "type": "VIDEO",
+          "angle": "community",
+          "thumbnail": "🎓",
+          "description": "Creator goes from zero to double-unders in 7 days using the app's guided program",
+          "hook": "I learned double-unders in 7 days. Here's exactly how.",
+          "scores": {
+            "existing_customers": 6.4,
+            "new_audiences": 8.9
+          },
+          "best_for": "jump_rope_community",
+          "recommended_for_strategy": "community_first",
+          "why_it_works": "Skill progression is the #1 motivator for the jump rope community. App as coach angle.",
+          "why_it_fails": "Too niche for general fitness audiences who don't know what double-unders are."
+        },
+        {
+          "id": "calorie_crusher",
+          "name": "Calorie Crusher",
+          "type": "STATIC",
+          "angle": "data",
+          "thumbnail": "🔥",
+          "description": "Data comparison — 10 minutes jump rope vs 30 minutes treadmill. RPM counter. Calorie burn.",
+          "hook": "10 minutes. 147 calories. The most efficient cardio you're not doing.",
+          "scores": {
+            "existing_customers": 5.9,
+            "new_audiences": 8.4
+          },
+          "best_for": "hiit_enthusiasts",
+          "recommended_for_strategy": "performance_first",
+          "why_it_works": "HIIT crowd loves efficiency data. Positions rope as the smart cardio choice.",
+          "why_it_fails": "Band customers chose simplicity over optimization — data overwhelms them."
+        },
+        {
+          "id": "workout_anywhere",
+          "name": "Workout Anywhere",
+          "type": "VIDEO",
+          "angle": "lifestyle",
+          "thumbnail": "🌍",
+          "description": "Jump rope in hotel room, park, garage gym — Peak Form's accessible ethos applied to smart rope",
+          "hook": "Your gym is wherever you are. Now it's smarter.",
+          "scores": {
+            "existing_customers": 7.8,
+            "new_audiences": 6.2
+          },
+          "best_for": "existing_customers",
+          "recommended_for_strategy": "community_first",
+          "why_it_works": "Connects Peak Form's 'workout anywhere' DNA to the new product. Brand consistency.",
+          "why_it_fails": "Lifestyle framing too soft for CrossFit and data-obsessed audiences."
+        }
+      ],
+  
+      "test_plan": {
+        "budget": 7000,
+        "duration_hours": 48,
+        "new_audience_split": 0.70,
+        "existing_customer_split": 0.30,
+        "tiktok_track": true,
+        "scenarios": {
+          "performance_first": {
+            "cells": [
+              { "creative": "beat_yesterday", "audience": "HIIT Enthusiasts", "budget": 2000 },
+              { "creative": "calorie_crusher", "audience": "Fitness App Power Users", "budget": 2000 },
+              { "creative": "beat_yesterday", "audience": "CrossFit Home Gymers", "budget": 1500 },
+              { "creative": "one_more_thing", "audience": "Existing Customers", "budget": 1500 }
+            ],
+            "landing_page": "Data-forward page — app dashboard preview, RPM tracking, streak system",
+            "stop_rule": "CPA > $50 after 100 clicks",
+            "promote_rule": "ROAS > 2.5x after $1000 spend"
+          },
+          "community_first": {
+            "cells": [
+              { "creative": "unboxing_first", "audience": "Jump Rope Community", "budget": 2500 },
+              { "creative": "double_under_tutorial", "audience": "Jump Rope Community", "budget": 2000 },
+              { "creative": "beat_yesterday", "audience": "CrossFit Home Gymers", "budget": 1500 },
+              { "creative": "workout_anywhere", "audience": "Existing Customers", "budget": 1000 }
+            ],
+            "landing_page": "Community-first page — creator seeding, skill progression, app as coach",
+            "stop_rule": "CPA > $40 after 100 clicks",
+            "promote_rule": "ROAS > 3x after $1000 spend",
+            "tiktok_note": "Jump rope community TikTok seeding with 5 micro-creators. First TikTok activation for Peak Form."
+          }
+        }
+      }
+    },
+  
+    "act3": {
+      "title": "Performance Diagnosis",
+      "question": "The jump rope community loves us. Everyone else bounced after the free trial.",
+      "context": "Six weeks in. Jump rope community is a home run. Everyone else is churning.",
+      "weeks_running": 6,
+  
+      "scenarios": {
+        "performance_first": {
+          "tracks": [
+            {
+              "name": "Jump Rope Community",
+              "cpa": 22,
+              "roas": 4.1,
+              "app_retention_30d": "68%",
+              "status": "WINNING",
+              "insight": "Home run — they already have the habit, the app supercharges it"
+            },
+            {
+              "name": "HIIT & CrossFit",
+              "cpa": 38,
+              "roas": 1.9,
+              "app_retention_30d": "31%",
+              "status": "STRUGGLING",
+              "insight": "Buying the rope but abandoning the app within 2 weeks"
+            },
+            {
+              "name": "Existing Band Customers",
+              "cpa": 52,
+              "roas": 0.9,
+              "app_retention_30d": "18%",
+              "status": "FAILING",
+              "insight": "Wrong audience for this product — they chose Peak Form for simplicity"
+            },
+            {
+              "name": "Fitness App Users",
+              "cpa": 41,
+              "roas": 1.4,
+              "app_retention_30d": "22%",
+              "status": "UNDERPERFORMING",
+              "insight": "Downloading app but not building jump rope habit"
+            }
+          ],
+          "diagnosis": {
+            "type": "HABIT_FORMATION",
+            "title": "Habit Formation Gap",
+            "not_the_problem": "Acquisition metrics are fine — the creative is converting",
+            "root_cause": "LCBM analyzes app engagement data: non-jump-rope people don't have a jumping habit. The app assumes you already know what a double-under is. First session experience is intimidating for beginners.",
+            "funnel_insight": "App drop-off analysis: 71% of non-community users quit after Session 1. Exit survey: 'I didn't know where to start' and 'It felt too advanced for me'",
+            "social_agents": "You're selling a habit-forming product to people who don't have the habit yet. The jump rope community doesn't need onboarding — they've been jumping for years. Everyone else needs a 'Week 1 for Beginners' guided program before they see the app's real value."
+          },
+          "recovery_strategies": [
+            {
+              "id": "beginner_program",
+              "label": "Day 1 to Day 30 Challenge",
+              "emoji": "📅",
+              "description": "Create a structured beginner program in the app. New ad creative that sets expectations: 'Zero experience needed. The app teaches you.' Retarget churned users with the Day 1 Challenge.",
+              "transsuasion_copy": "Zero experience needed. The app teaches you everything — starting with your first 60 seconds.",
+              "app_change": "New 'Absolute Beginner' track added to app onboarding. Day 1 is just 3 minutes of basic jumping.",
+              "expected_lift": "HIIT retention 31% → 58%, App Users retention 22% → 44%",
+              "impact_act4": "beginner_friendly",
+              "impacts": {
+                "act4_messaging": "beginner_welcome",
+                "act4_retail_angle": "anyone_can_start",
+                "act4_qr_deeplink": "beginner_challenge"
+              }
+            },
+            {
+              "id": "community_pivot",
+              "label": "Pivot Budget to Community",
+              "emoji": "🪢",
+              "description": "Stop HIIT and App User campaigns entirely. Double down on jump rope community and CrossFit where retention is proven. Reallocate 70% of budget.",
+              "transsuasion_copy": "Built for the jump rope community. Backed by data. Ready for your next PR.",
+              "expected_lift": "Overall ROAS 2.1x → 3.6x, CAC drops 40%",
+              "impact_act4": "community_focused",
+              "impacts": {
+                "act4_messaging": "community_authority",
+                "act4_retail_angle": "community_proven",
+                "act4_qr_deeplink": "community_challenge"
+              }
+            }
+          ]
+        },
+        "community_first": {
+          "tracks": [
+            {
+              "name": "Jump Rope Community",
+              "cpa": 22,
+              "roas": 4.1,
+              "app_retention_30d": "68%",
+              "status": "WINNING",
+              "insight": "Exactly as predicted — community loves it and stays"
+            },
+            {
+              "name": "CrossFit Home Gymers",
+              "cpa": 31,
+              "roas": 2.8,
+              "app_retention_30d": "52%",
+              "status": "GOOD",
+              "insight": "CrossFit crowd has some jump rope familiarity — retention is solid"
+            },
+            {
+              "name": "Existing Band Customers",
+              "cpa": 48,
+              "roas": 1.1,
+              "app_retention_30d": "21%",
+              "status": "STRUGGLING",
+              "insight": "Same issue — band customers aren't the smart rope audience"
+            }
+          ],
+          "diagnosis": {
+            "type": "SCALE_CEILING",
+            "title": "Scale Ceiling Approaching",
+            "not_the_problem": "Community strategy is working brilliantly — retention is best in class",
+            "root_cause": "The jump rope community is 800K strong — you've reached 12% of them already. CrossFit is scaling well but the unit economics aren't as strong. Need to expand beyond the core community without losing what makes the product great.",
+            "funnel_insight": "Community ambassador program is organically growing — 340 creators have posted about Peak Form smart rope without paid promotion. This is the expansion engine.",
+            "social_agents": "You've won the community. Now let the community win everyone else. Your ambassadors are your best acquisition channel — give them tools, not just product."
+          },
+          "recovery_strategies": [
+            {
+              "id": "ambassador_program",
+              "label": "Ambassador-Led Expansion",
+              "emoji": "🌟",
+              "description": "Formalize the 340 organic creators into a paid ambassador program. They create content targeting HIIT and fitness app audiences — with community credibility that ads can't buy.",
+              "transsuasion_copy": "10,000 jump rope athletes already switched. Here's why the HIIT community is next.",
+              "expected_lift": "Reach expansion 3x, HIIT retention improves to 48% with community-endorsed content",
+              "impact_act4": "ambassador_powered",
+              "impacts": {
+                "act4_messaging": "community_authority",
+                "act4_retail_angle": "community_proven",
+                "act4_qr_deeplink": "ambassador_content"
+              }
+            },
+            {
+              "id": "beginner_bridge",
+              "label": "Build the Beginner Bridge",
+              "emoji": "🌉",
+              "description": "Launch a beginner program specifically designed to bring HIIT and general fitness audiences into the jump rope habit. Community creators teach beginners — bridging the gap.",
+              "transsuasion_copy": "The jump rope community's best kept secret — now with a beginner's guide.",
+              "expected_lift": "TAM expansion 2.8x, beginner retention 54%",
+              "impact_act4": "beginner_bridge",
+              "impacts": {
+                "act4_messaging": "beginner_welcome",
+                "act4_retail_angle": "anyone_can_start",
+                "act4_qr_deeplink": "beginner_challenge"
+              }
+            }
+          ]
+        }
+      }
+    },
+  
+    "act4": {
+      "title": "Regional Expansion",
+      "question": "Online is working. Now we're going into Dick's Sporting Goods in 3 test markets.",
+      "context": "Peak Form is entering retail in Dallas, Chicago, and Miami. Each market has a different fitness culture.",
+  
+      "markets": [
+        {
+          "id": "dallas",
+          "name": "Dallas",
+          "emoji": "🤠",
+          "state": "Texas",
+          "population": "1.3M",
+          "fitness_culture": "CrossFit density is 2x the national average",
+          "competitive_landscape": "Rogue and Concept2 dominate premium fitness. Smart devices growing.",
+          "lcbm_score": 91,
+          "lcbm_insight": "CrossFit density is 2x the national average in Dallas. The HIIT and CrossFit audience that underperformed nationally is highly concentrated here. Lead with competitive motivation and performance data.",
+          "recommended_angle": "Competitive Performance",
+          "recommended_creative": "beat_yesterday",
+          "budget": 18000,
+          "predicted_cpa": 28,
+          "predicted_roas": 3.2,
+          "dicks_strategy": "End-cap display near CrossFit and functional fitness equipment. QR code to PR tracking challenge.",
+          "playbook": {
+            "awareness": "CrossFit and HIIT competitive content — PR tracking, RPM leaderboards",
+            "consideration": "In-store demo station with live RPM tracking display",
+            "conversion": "30-day challenge QR code with Dick's exclusive bundle"
+          },
+          "conditions": {
+            "beginner_friendly": {
+              "advantage": "Beginner program removes the intimidation factor for non-CrossFit Dallas buyers",
+              "extra_tactic": "In-store 'Start Your Journey' display with beginner challenge QR code"
+            },
+            "community_authority": {
+              "advantage": "Dallas CrossFit community responds to peer validation — leverage ambassador content",
+              "extra_tactic": "Local CrossFit box partnership — Peak Form as official jump rope partner"
+            }
+          }
+        },
+        {
+          "id": "chicago",
+          "name": "Chicago",
+          "emoji": "🌬️",
+          "state": "Illinois",
+          "population": "2.7M",
+          "fitness_culture": "Long winters drive indoor fitness demand heavily",
+          "competitive_landscape": "Indoor fitness brands dominate. Home gym market is large.",
+          "lcbm_score": 88,
+          "lcbm_insight": "Long winters make indoor fitness a necessity, not a choice. The 'workout anywhere' angle that didn't work nationally resonates strongly here. When it's -10 outside, Peak Form's home workout DNA is a superpower.",
+          "recommended_angle": "Indoor Anywhere Workout",
+          "recommended_creative": "workout_anywhere",
+          "budget": 15000,
+          "predicted_cpa": 31,
+          "predicted_roas": 2.7,
+          "dicks_strategy": "Winter fitness section placement. 'No gym? No problem.' seasonal messaging.",
+          "playbook": {
+            "awareness": "Winter indoor fitness content — apartment workouts, garage gym, basement gym",
+            "consideration": "Value comparison — smart rope vs gym membership cost over winter",
+            "conversion": "Drive to Dick's with winter bundle — rope + cold weather workout guide"
+          },
+          "conditions": {
+            "beginner_friendly": {
+              "advantage": "Chicago's indoor fitness crowd includes many beginners — beginner program is key",
+              "extra_tactic": "30-day indoor winter challenge campaign launching November"
+            },
+            "ambassador_powered": {
+              "advantage": "Chicago fitness creators are highly local and trusted — perfect for ambassador activation",
+              "extra_tactic": "Chicago fitness influencer winter series — smart rope as the indoor cardio hero"
+            }
+          }
+        },
+        {
+          "id": "miami",
+          "name": "Miami",
+          "emoji": "🌴",
+          "state": "Florida",
+          "population": "470K",
+          "fitness_culture": "Outdoor fitness culture dominates year-round",
+          "competitive_landscape": "Outdoor and water sports brands strong. Portability is key purchase driver.",
+          "lcbm_score": 86,
+          "lcbm_insight": "Outdoor fitness culture means the smart rope is an outdoor product here, not indoor. Completely different use case than Chicago. Imagery must shift from living rooms and garages to parks, beaches, and waterfronts.",
+          "recommended_angle": "Outdoor Portable Performance",
+          "recommended_creative": "calorie_crusher",
+          "budget": 14000,
+          "predicted_cpa": 33,
+          "predicted_roas": 2.4,
+          "dicks_strategy": "Outdoor sports section placement. 'Take it outside' Miami-specific display.",
+          "playbook": {
+            "awareness": "Outdoor workout content — beach, park, waterfront with smart rope",
+            "consideration": "Portability and weather-resistance focus. Tracks outdoor workouts.",
+            "conversion": "Miami exclusive: outdoor workout challenge with local fitness community"
+          },
+          "conditions": {
+            "beginner_friendly": {
+              "advantage": "Miami's tourist and newcomer population means many beginner fitness seekers",
+              "extra_tactic": "Beach workout series with beginner jump rope program — shareable content"
+            },
+            "community_authority": {
+              "advantage": "Miami's outdoor fitness community is tight-knit and influential",
+              "extra_tactic": "South Beach jump rope community meetup sponsored by Peak Form"
+            }
+          }
+        }
+      ],
+  
+      "blended_playbook": {
+        "title": "Retail + App Deep-Link Strategy",
+        "layers": [
+          {
+            "name": "Retail Drive-to-Store",
+            "description": "Location-targeted ads driving to nearest Dick's Sporting Goods",
+            "budget_pct": 35
+          },
+          {
+            "name": "App Acquisition",
+            "description": "QR codes in-store deep-linking to beginner challenge or community hub",
+            "budget_pct": 30
+          },
+          {
+            "name": "DTC Retargeting",
+            "description": "Online browsers who visited DTC site retargeted with retail availability",
+            "budget_pct": 20
+          },
+          {
+            "name": "Community Building",
+            "description": "City-specific ambassador content building local Peak Form culture",
+            "budget_pct": 15
+          }
+        ]
+      }
+    }
+  }
+  
