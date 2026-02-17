@@ -11,8 +11,7 @@ function Act3({ brandData, addChatMessage }) {
   const [selectedRecovery, setSelectedRecovery] = useState(
     storyState.act3.recoveryStrategy || null
   );
-//   const [showDiagnosis, setShowDiagnosis] = useState(false);
-//   const [showRecovery, setShowRecovery] = useState(false);
+
   const [diagnosisRevealed, setDiagnosisRevealed] = useState(false);
 
   const act3Data = brandData.act3;
@@ -57,7 +56,6 @@ function Act3({ brandData, addChatMessage }) {
 
   const handleRevealDiagnosis = () => {
     setDiagnosisRevealed(true);
-    setShowDiagnosis(true);
     addChatMessage({
       type: 'user',
       content: 'What does the data tell us? Run the diagnosis.'
@@ -73,7 +71,6 @@ function Act3({ brandData, addChatMessage }) {
       r => r.id === strategyId
     );
     setSelectedRecovery(strategyId);
-    setShowRecovery(true);
     updateActState('act3', {
       recoveryStrategy: strategyId,
       diagnosisPath: scenario.diagnosis.type,
