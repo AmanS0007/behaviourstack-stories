@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useStory } from '../../context/StoryContext';
 import {
-  Brain, Send, Sparkles, ChevronDown,
-  Users, Lightbulb, TrendingUp, MapPin,
-  Zap, MessageSquare
+  Brain, Send, Sparkles,
+  Users, Lightbulb, TrendingUp, MapPin, MessageSquare
 } from 'lucide-react';
 import '../../styles/ChatPanel.css';
 

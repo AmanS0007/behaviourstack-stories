@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { useStory } from '../context/StoryContext';
 import {
   TrendingUp, TrendingDown, AlertTriangle, CheckCircle,
-  ArrowRight, Brain, Zap, Target, Info, ChevronDown,
-  ChevronUp, Activity, BarChart2, RefreshCw
+  ArrowRight, Brain, Zap, Target, Info, Activity, BarChart2, RefreshCw
 } from 'lucide-react';
 import '../styles/Act3.css';
 
@@ -12,8 +11,8 @@ function Act3({ brandData, addChatMessage }) {
   const [selectedRecovery, setSelectedRecovery] = useState(
     storyState.act3.recoveryStrategy || null
   );
-  const [showDiagnosis, setShowDiagnosis] = useState(false);
-  const [showRecovery, setShowRecovery] = useState(false);
+//   const [showDiagnosis, setShowDiagnosis] = useState(false);
+//   const [showRecovery, setShowRecovery] = useState(false);
   const [diagnosisRevealed, setDiagnosisRevealed] = useState(false);
 
   const act3Data = brandData.act3;

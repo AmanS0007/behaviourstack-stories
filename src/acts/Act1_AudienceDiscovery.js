@@ -19,7 +19,7 @@ function Act1({ brandData, addChatMessage }) {
   );
 
   const act1Data = brandData.act1;
-  const brandColors = brandData.brand.colors;
+//   const brandColors = brandData.brand.colors;
 
   const handleAudienceToggle = (audienceId) => {
     const updated = selectedAudiences.includes(audienceId)
