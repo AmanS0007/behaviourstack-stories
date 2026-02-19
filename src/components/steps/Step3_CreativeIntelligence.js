@@ -95,8 +95,12 @@ function Step3_CreativeIntelligence({ nextStep: propNextStep, prevStep: propPrev
   };
 
   // Download all assets
-  const handleDownloadAll = () => {
-    alert('Download functionality: Would download all images, videos, and Google Ads copy as a ZIP file.\n\nIn production, this would:\n1. Collect all asset URLs\n2. Create a ZIP file with all images, videos, and ad copy\n3. Trigger download');
+  const handleDownloadAll = (variant = null) => {
+    if (variant) {
+      alert(`Download functionality: Would download assets for "${variant.name}".\n\nIn production, this would download this variant's images, video, and ad copy.`);
+    } else {
+      alert('Download functionality: Would download all images, videos, and Google Ads copy as a ZIP file.\n\nIn production, this would:\n1. Collect all asset URLs\n2. Create a ZIP file with all images, videos, and ad copy\n3. Trigger download');
+    }
   };
 
   // Mode selection screen
@@ -603,29 +607,40 @@ function Step3_CreativeIntelligence({ nextStep: propNextStep, prevStep: propPrev
                   </div>
                 </div>
 
-                {/* Select Button */}
-                <button
-                  className={`select-variant-btn ${isSelected ? 'selected' : ''}`}
-                  onClick={() => handleSelectCreative(variant.id)}
-                >
-                  {isSelected ? (
-                    <>
-                      <CheckCircle className="btn-icon" /> Selected
-                    </>
-                  ) : (
-                    'Select This Variant'
-                  )}
-                </button>
+                {/* Actions: Select + Download side by side */}
+                <div className="variant-actions-row">
+                  <button
+                    className={`select-variant-btn ${isSelected ? 'selected' : ''}`}
+                    onClick={() => handleSelectCreative(variant.id)}
+                  >
+                    {isSelected ? (
+                      <>
+                        <CheckCircle className="btn-icon" /> Selected
+                      </>
+                    ) : (
+                      'Select This Variant'
+                    )}
+                  </button>
+                  <button
+                    type="button"
+                    className="download-variant-btn"
+                    onClick={() => handleDownloadAll(variant)}
+                    title={`Download ${variant.name} assets`}
+                  >
+                    <Download className="btn-icon" />
+                    Download
+                  </button>
+                </div>
               </div>
             );
           })}
         </div>
 
-        {/* Download All Button */}
-        <button className="download-all-btn" onClick={handleDownloadAll}>
+        {/* Download All Button
+        <button className="download-all-btn" onClick={() => handleDownloadAll()}>
           <Download className="btn-icon" />
           Download All Generated Assets (ZIP)
-        </button>
+        </button> */}
 
         {/* Actions */}
         <div className="form-actions">
