@@ -13,7 +13,8 @@ export function PresentationProvider({ children }) {
     existingCustomers: '',
     monthlySpend: '',
     category: '',
-    newProduct: ''
+    newProduct: '',
+    targetRegions: ''
   });
 
   // Audience Selection (Step 2)
@@ -65,7 +66,7 @@ export function PresentationProvider({ children }) {
     setCurrentStep(1);
     setProductData({
       productName: '', description: '', price: '',
-      existingCustomers: '', monthlySpend: '', category: '', newProduct: ''
+      existingCustomers: '', monthlySpend: '', category: '', newProduct: '', targetRegions: ''
     });
     setSelectedAudiences([]);
     setAudienceStrategy(null);

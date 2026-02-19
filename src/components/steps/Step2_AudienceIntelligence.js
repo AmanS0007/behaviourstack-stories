@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { usePresentation } from '../../context/PresentationContext';
-import { ArrowRight, ArrowLeft, Brain, Users, TrendingUp, CheckCircle, ChevronDown, ChevronUp, Database } from 'lucide-react';
+import { ArrowRight, ArrowLeft, Brain, Users, TrendingUp, CheckCircle, ChevronDown, ChevronUp, Database, Info } from 'lucide-react';
 import { generateAudiences, generateExistingAudiences } from '../../utils/audienceGenerator';
 import '../../styles/Steps.css';
 
@@ -186,6 +186,11 @@ function Step2_AudienceIntelligence({ nextStep: propNextStep, prevStep: propPrev
                   <div className="audience-info-step2">
                     <h4 className="audience-name-step2">{audience.name}</h4>
                     <p className="audience-demo-step2">{audience.demographics}</p>
+                    {audience.region && audience.region !== 'Not specified' && (
+                      <p className="audience-region-step2">
+                        <span className="audience-region-label">Target:</span> {audience.region}
+                      </p>
+                    )}
                   </div>
                   <div className="fit-score-wrap-step2">
                     <div className="fit-score-step2">{audience.fit_score}</div>
@@ -197,6 +202,18 @@ function Step2_AudienceIntelligence({ nextStep: propNextStep, prevStep: propPrev
                 <div className="audience-size-step2">
                   <Users className="size-icon" />
                   <span>{audience.size} {activeTab === 'existing' ? 'customers' : 'potential reach'}</span>
+                  {activeTab === 'discovered' && (
+                    <span
+                      className="size-tooltip-wrap"
+                      title="LCBM estimates addressable audience size using platform and third-party signals and category benchmarks within your target geography. Use for planning; validate with your ad platform."
+                      aria-label="How we estimate potential reach"
+                    >
+                      <Info className="size-info-icon" />
+                      <span className="size-tooltip">
+                        LCBM estimates addressable audience size using platform and third-party signals and category benchmarks within your target geography. Use for planning; validate with your ad platform.
+                      </span>
+                    </span>
+                  )}
                 </div>
 
                 {/* Why Fit */}

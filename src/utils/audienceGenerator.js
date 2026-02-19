@@ -1,19 +1,25 @@
-// Generate audiences based on product category
+// Generate audiences based on product category; scope with target geography when provided
 export const generateAudiences = (productData) => {
   const category = productData.category?.toLowerCase() || '';
   const productName = productData.productName || 'Product';
   const price = parseFloat(productData.price) || 50;
+  const targetRegions = productData.targetRegions?.trim() || null;
 
-  // Determine audience profiles based on category
+  let list;
   if (category.includes('fitness') || category.includes('health') || category.includes('sport')) {
-    return getFitnessAudiences(productName, price);
+    list = getFitnessAudiences(productName, price);
   } else if (category.includes('beauty') || category.includes('skincare') || category.includes('cosmetic')) {
-    return getBeautyAudiences(productName, price);
+    list = getBeautyAudiences(productName, price);
   } else if (category.includes('food') || category.includes('beverage') || category.includes('drink')) {
-    return getBeverageAudiences(productName, price);
+    list = getBeverageAudiences(productName, price);
   } else {
-    return getGenericAudiences(productName, price);
+    list = getGenericAudiences(productName, price);
   }
+
+  return list.map((aud) => ({
+    ...aud,
+    region: targetRegions || 'Not specified'
+  }));
 };
 
 const getFitnessAudiences = (productName, price) => [

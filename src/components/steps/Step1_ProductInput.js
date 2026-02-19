@@ -1,9 +1,20 @@
 import React, { useState } from 'react';
 import { usePresentation } from '../../context/PresentationContext';
-import { ArrowRight, Package, DollarSign, Users, TrendingUp, Lightbulb } from 'lucide-react';
+import { ArrowRight, Package, DollarSign, Users, TrendingUp, Lightbulb, MapPin } from 'lucide-react';
 import '../../styles/Steps.css';
 
 // Example templates for quick-fill
+const TARGET_REGION_OPTIONS = [
+  { value: '', label: 'Select target geography...' },
+  { value: 'US only', label: 'US only' },
+  { value: 'US & Canada', label: 'US & Canada' },
+  { value: 'North America', label: 'North America' },
+  { value: 'UK & Ireland', label: 'UK & Ireland' },
+  { value: 'Europe', label: 'Europe' },
+  { value: 'APAC', label: 'APAC' },
+  { value: 'Global / International', label: 'Global / International' }
+];
+
 const exampleProducts = [
   {
     productName: 'Ember Roasts Cold Brew',
@@ -12,7 +23,8 @@ const exampleProducts = [
     existingCustomers: '40000',
     monthlySpend: '120000',
     category: 'Beverage',
-    newProduct: 'RTD Cold Brew Cans'
+    newProduct: 'RTD Cold Brew Cans',
+    targetRegions: 'US & Canada'
   },
   {
     productName: 'Vela Body Care Line',
@@ -21,7 +33,8 @@ const exampleProducts = [
     existingCustomers: '35000',
     monthlySpend: '90000',
     category: 'Beauty',
-    newProduct: 'Body Care Collection'
+    newProduct: 'Body Care Collection',
+    targetRegions: 'North America'
   },
   {
     productName: 'Peak Form Smart Rope',
@@ -30,7 +43,8 @@ const exampleProducts = [
     existingCustomers: '60000',
     monthlySpend: '100000',
     category: 'Fitness',
-    newProduct: 'Smart Jump Rope'
+    newProduct: 'Smart Jump Rope',
+    targetRegions: 'US only'
   }
 ];
 
@@ -250,6 +264,32 @@ function Step1_ProductInput({ nextStep: propNextStep }) {  // ADD THIS PARAM
                   onChange={e => handleChange('monthlySpend', e.target.value)}
                 />
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="form-section">
+          <div className="form-section-header">
+            <MapPin className="section-icon" />
+            <h3 className="section-title">Target Geography</h3>
+          </div>
+          <div className="form-grid">
+            <div className="form-group full">
+              <label className="form-label">Where do you sell or deliver?</label>
+              <p className="form-hint">
+                Audience recommendations will be scoped to regions where you can actually reach customers.
+              </p>
+              <select
+                className="form-input"
+                value={productData.targetRegions || ''}
+                onChange={e => handleChange('targetRegions', e.target.value)}
+              >
+                {TARGET_REGION_OPTIONS.map((opt) => (
+                  <option key={opt.value || 'empty'} value={opt.value}>
+                    {opt.label}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
         </div>
