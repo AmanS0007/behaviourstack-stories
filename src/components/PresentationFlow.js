@@ -9,18 +9,26 @@ import Step5_MarketIntelligence from './steps/Step5_MarketIntelligence';
 import Step6_FinalReport from './steps/Step6_FinalReport';
 import '../styles/PresentationFlow.css';
 
+// ESLint-friendly aliases for components with underscores
+const Step1ProductInput = Step1_ProductInput;
+const Step2AudienceIntelligence = Step2_AudienceIntelligence;
+const Step3CreativeIntelligence = Step3_CreativeIntelligence;
+const Step4PerformanceIntelligence = Step4_PerformanceIntelligence;
+const Step5MarketIntelligence = Step5_MarketIntelligence;
+const Step6FinalReport = Step6_FinalReport;
+
 function PresentationFlow({ onExit }) {
   const { currentStep } = usePresentation();
 
   const renderStep = () => {
     switch (currentStep) {
-      case 1: return <Step1_ProductInput />;
-      case 2: return <Step2_AudienceIntelligence />;
-      case 3: return <Step3_CreativeIntelligence />;
-      case 4: return <Step4_PerformanceIntelligence />;
-      case 5: return <Step5_MarketIntelligence />;
-      case 6: return <Step6_FinalReport />;
-      default: return <Step1_ProductInput />;
+      case 1: return <Step1ProductInput />;
+      case 2: return <Step2AudienceIntelligence />;
+      case 3: return <Step3CreativeIntelligence />;
+      case 4: return <Step4PerformanceIntelligence />;
+      case 5: return <Step5MarketIntelligence />;
+      case 6: return <Step6FinalReport />;
+      default: return <Step1ProductInput />;
     }
   };
 

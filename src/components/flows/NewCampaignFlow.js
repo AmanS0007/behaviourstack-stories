@@ -1,10 +1,15 @@
 import React, { useState } from 'react';
 import { usePresentation } from '../../context/PresentationContext';
-import { Home, CheckCircle, Trophy, Download, ArrowRight } from 'lucide-react';
+import { Home, CheckCircle, Trophy } from 'lucide-react';
 import Step1_ProductInput from '../steps/Step1_ProductInput';
 import Step2_AudienceIntelligence from '../steps/Step2_AudienceIntelligence';
 import Step3_CreativeIntelligence from '../steps/Step3_CreativeIntelligence';
 import '../../styles/PresentationFlow.css';
+
+// ESLint-friendly aliases for components with underscores
+const Step1ProductInput = Step1_ProductInput;
+const Step2AudienceIntelligence = Step2_AudienceIntelligence;
+const Step3CreativeIntelligence = Step3_CreativeIntelligence;
 
 function NewCampaignFlow({ onExit }) {
   const { productData, selectedAudiences, selectedCreative } = usePresentation();
@@ -23,16 +28,16 @@ function NewCampaignFlow({ onExit }) {
 
   const renderStep = () => {
     switch (currentStep) {
-      case 1: return <Step1_ProductInput nextStep={() => setCurrentStep(2)} />;
-      case 2: return <Step2_AudienceIntelligence 
+      case 1: return <Step1ProductInput nextStep={() => setCurrentStep(2)} />;
+      case 2: return <Step2AudienceIntelligence 
         nextStep={() => setCurrentStep(3)} 
         prevStep={() => setCurrentStep(1)} 
       />;
-      case 3: return <Step3_CreativeIntelligence 
+      case 3: return <Step3CreativeIntelligence 
         prevStep={() => setCurrentStep(2)}
-        nextStep={handleStep3Complete} // PASS COMPLETION HANDLER
+        nextStep={handleStep3Complete}
       />;
-      default: return <Step1_ProductInput />;
+      default: return <Step1ProductInput />;
     }
   };
 

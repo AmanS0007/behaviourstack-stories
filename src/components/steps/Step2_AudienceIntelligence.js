@@ -20,7 +20,6 @@ function Step2_AudienceIntelligence({ nextStep: propNextStep, prevStep: propPrev
 
   const [discoveredAudiences, setDiscoveredAudiences] = useState([]);
   const [existingAudiences, setExistingAudiences] = useState([]);
-  const [crossover, setCrossover] = useState(null);
   const [expandedAudience, setExpandedAudience] = useState(null);
   const [analyzing, setAnalyzing] = useState(true);
   const [activeTab, setActiveTab] = useState('discovered'); // 'discovered' or 'existing'
