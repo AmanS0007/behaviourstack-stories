@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { usePresentation } from '../../context/PresentationContext';
 import { ArrowRight, ArrowLeft, Brain, Users, TrendingUp, CheckCircle, ChevronDown, ChevronUp, Database } from 'lucide-react';
-import { generateAudiences, generateExistingAudiences, calculateCrossover } from '../../utils/audienceGenerator';
+import { generateAudiences, generateExistingAudiences } from '../../utils/audienceGenerator';
 import '../../styles/Steps.css';
 
 function Step2_AudienceIntelligence({ nextStep: propNextStep, prevStep: propPrevStep }) {  // ADD PARAMS
@@ -30,11 +30,9 @@ function Step2_AudienceIntelligence({ nextStep: propNextStep, prevStep: propPrev
     setTimeout(() => {
       const discovered = generateAudiences(productData);
       const existing = generateExistingAudiences(productData);
-      const crossoverData = calculateCrossover(productData);
       
       setDiscoveredAudiences(discovered);
       setExistingAudiences(existing);
-      setCrossover(crossoverData);
       setAnalyzing(false);
     }, 1500);
   }, [productData]);
