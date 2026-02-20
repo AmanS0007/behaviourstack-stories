@@ -31,13 +31,30 @@ const exampleCompanies = [
   }
 ];
 
+// Industry helpers for preference rating copy
+function isBeauty(industryLower) {
+  return industryLower.includes('beauty') || industryLower.includes('skincare') || industryLower.includes('cosmetic');
+}
+function isFitness(industryLower) {
+  return industryLower.includes('fitness') || industryLower.includes('health') || industryLower.includes('wellness');
+}
+function isCoffee(industryLower) {
+  return industryLower.includes('coffee') || industryLower.includes('beverage') || industryLower.includes('food');
+}
+function industryLabel(industryLower) {
+  if (isBeauty(industryLower)) return 'beauty and lifestyle';
+  if (isFitness(industryLower)) return 'fitness and wellness';
+  if (isCoffee(industryLower)) return 'coffee and beverage';
+  return 'your industry';
+}
+
 // Rate user's preferred state/region against company profile
 function ratePreferenceState(preferenceState, industry, targetExpansion) {
   if (!preferenceState || !preferenceState.trim()) return null;
   const state = preferenceState.trim();
   const industryLower = (industry || '').toLowerCase();
+  const category = industryLabel(industryLower);
 
-  // Map common state/region names to a rating profile
   const stateLower = state.toLowerCase();
   let fitScore = 78;
   let verdict = 'Moderate fit';
@@ -46,45 +63,53 @@ function ratePreferenceState(preferenceState, industry, targetExpansion) {
   let summary = '';
 
   if (stateLower.includes('texas') || stateLower.includes('tx') || stateLower.includes('austin')) {
-    fitScore = industryLower.includes('fitness') || industryLower.includes('coffee') ? 89 : industryLower.includes('beauty') ? 82 : 86;
+    fitScore = isFitness(industryLower) || isCoffee(industryLower) ? 89 : isBeauty(industryLower) ? 82 : 86;
     verdict = fitScore >= 88 ? 'Strong fit' : 'Good fit';
     pros = ['No state income tax', 'Fast-growing population', 'Strong tech and creative workforce'];
-    cons = industryLower.includes('beauty') ? ['Less established beauty hub vs. coastal markets'] : ['Competition in major metros'];
-    summary = fitScore >= 88 ? 'Texas aligns well with your expansion profile; Austin in particular is a top-tier market for your industry.' : 'Texas offers solid growth potential with lower entry costs than coastal markets.';
+    cons = isBeauty(industryLower) ? ['Less established beauty hub vs. coastal markets'] : isCoffee(industryLower) ? ['Growing but competitive coffee scene'] : ['Competition in major metros'];
+    summary = fitScore >= 88 ? `Texas aligns well with your expansion profile; Austin in particular is a top-tier market for ${category}.` : 'Texas offers solid growth potential with lower entry costs than coastal markets.';
   } else if (stateLower.includes('colorado') || stateLower.includes('co') || stateLower.includes('denver')) {
-    fitScore = industryLower.includes('fitness') || industryLower.includes('health') ? 91 : industryLower.includes('coffee') ? 90 : 85;
+    fitScore = isFitness(industryLower) ? 91 : isCoffee(industryLower) ? 90 : isBeauty(industryLower) ? 85 : 85;
     verdict = fitScore >= 88 ? 'Strong fit' : 'Good fit';
     pros = ['High disposable income', 'Active lifestyle culture', 'Educated demographic'];
     cons = ['Higher cost of entry in Denver metro'];
-    summary = 'Colorado is an excellent match for health and outdoor-oriented brands; Denver commands premium positioning.';
+    if (isFitness(industryLower)) summary = 'Colorado is an excellent match for fitness and health brands; Denver commands premium positioning.';
+    else if (isCoffee(industryLower)) summary = 'Colorado is a strong market for coffee and beverage expansion with an active, on-the-go demographic.';
+    else if (isBeauty(industryLower)) summary = 'Colorado offers a solid niche for premium and wellness-focused beauty with affluent demographics.';
+    else summary = 'Colorado is an excellent match for your category; Denver commands premium positioning.';
   } else if (stateLower.includes('florida') || stateLower.includes('fl') || stateLower.includes('miami')) {
-    fitScore = industryLower.includes('beauty') || industryLower.includes('skincare') ? 92 : 84;
-    verdict = fitScore >= 90 ? 'Strong fit' : 'Good fit';
+    fitScore = isBeauty(industryLower) ? 92 : isCoffee(industryLower) ? 86 : isFitness(industryLower) ? 85 : 84;
+    verdict = fitScore >= 88 ? 'Strong fit' : 'Good fit';
     pros = ['Gateway to Latin American expansion', 'No state income tax', 'Year-round consumer activity'];
     cons = ['Seasonal tourism impact in some segments'];
-    summary = 'Florida, especially Miami, is a strong fit for beauty and lifestyle expansion with international upside.';
+    summary = `Florida, especially Miami, is a strong fit for ${category} expansion with international upside.`;
   } else if (stateLower.includes('california') || stateLower.includes('ca') || stateLower.includes('los angeles') || stateLower.includes('la')) {
-    fitScore = industryLower.includes('beauty') ? 96 : industryLower.includes('fitness') ? 90 : 88;
+    fitScore = isBeauty(industryLower) ? 96 : isFitness(industryLower) ? 90 : isCoffee(industryLower) ? 89 : 88;
     verdict = 'Strong fit';
     pros = ['Largest consumer market', 'Trend-setting demographics', 'Premium pricing power'];
     cons = ['Higher entry cost and competition'];
-    summary = 'California remains a flagship market for your category; entry cost is offset by scale and willingness to pay.';
+    summary = `California remains a flagship market for ${category}; entry cost is offset by scale and willingness to pay.`;
   } else if (stateLower.includes('arizona') || stateLower.includes('az') || stateLower.includes('scottsdale')) {
-    fitScore = industryLower.includes('beauty') ? 89 : 83;
+    fitScore = isBeauty(industryLower) ? 89 : isFitness(industryLower) ? 85 : isCoffee(industryLower) ? 84 : 83;
     verdict = 'Good fit';
     pros = ['Affluent demographics', 'Growing metro population', 'Strong spa and wellness culture'];
     cons = ['Smaller than coastal metros'];
-    summary = 'Arizona offers a strong niche for premium and wellness-focused brands with lower competition.';
+    if (isBeauty(industryLower)) summary = 'Arizona offers a strong niche for premium beauty and wellness with lower competition.';
+    else if (isFitness(industryLower) || isCoffee(industryLower)) summary = 'Arizona offers solid growth potential for your category with affluent demographics.';
+    else summary = 'Arizona offers a strong niche for premium and wellness-focused brands with lower competition.';
   } else if (stateLower.includes('tennessee') || stateLower.includes('tn') || stateLower.includes('nashville')) {
-    fitScore = industryLower.includes('fitness') || industryLower.includes('coffee') ? 87 : 81;
+    fitScore = isFitness(industryLower) || isCoffee(industryLower) ? 87 : isBeauty(industryLower) ? 82 : 81;
     verdict = 'Good fit';
     pros = ['Fastest-growing metro', 'Lower entry costs', 'Young professional influx'];
     cons = ['Emerging market; less established than coastal hubs'];
-    summary = 'Tennessee is an attractive growth market with lower barriers to entry and strong demographic trends.';
+    if (isCoffee(industryLower)) summary = 'Tennessee is an attractive growth market for coffee and beverage with a fast-growing, young demographic.';
+    else if (isFitness(industryLower)) summary = 'Tennessee offers strong fitness and wellness potential with lower barriers to entry.';
+    else if (isBeauty(industryLower)) summary = 'Tennessee is an emerging market for beauty with rising disposable income and population growth.';
+    else summary = 'Tennessee is an attractive growth market with lower barriers to entry and strong demographic trends.';
   } else {
     pros = ['Market size and growth potential evaluated', 'Entry costs typically moderate outside top-tier metros'];
     cons = ['Consider validating with local demand data'];
-    summary = `We've scored ${state} against your profile. Review our top recommendations below for comparison.`;
+    summary = `We've scored ${state} against your ${industry ? 'industry profile' : 'profile'}. Review our top recommendations below for comparison.`;
   }
 
   return { stateOrRegion: state, fitScore, verdict, pros, cons, summary };
