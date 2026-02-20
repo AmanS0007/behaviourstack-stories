@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { usePresentation } from '../../context/PresentationContext';
-import { ArrowRight, Package, DollarSign, Users, TrendingUp, Lightbulb, MapPin } from 'lucide-react';
+import { ArrowRight, Package, DollarSign, Users, TrendingUp, Lightbulb, MapPin, CheckSquare, Square, Tv } from 'lucide-react';
 import '../../styles/Steps.css';
 
 // Example templates for quick-fill
@@ -15,6 +15,15 @@ const TARGET_REGION_OPTIONS = [
   { value: 'Global / International', label: 'Global / International' }
 ];
 
+const AVAILABLE_CHANNELS = [
+  { id: 'meta', name: 'Meta (Facebook & Instagram)', icon: '📱' },
+  { id: 'google', name: 'Google Ads', icon: '🔍' },
+  { id: 'tiktok', name: 'TikTok Ads', icon: '🎵' },
+  { id: 'linkedin', name: 'LinkedIn Ads', icon: '💼' },
+  { id: 'snapchat', name: 'Snapchat Ads', icon: '👻' },
+  { id: 'pinterest', name: 'Pinterest Ads', icon: '📌' }
+];
+
 const exampleProducts = [
   {
     productName: 'Ember Roasts Cold Brew',
@@ -24,7 +33,8 @@ const exampleProducts = [
     monthlySpend: '120000',
     category: 'Beverage',
     newProduct: 'RTD Cold Brew Cans',
-    targetRegions: 'US & Canada'
+    targetRegions: 'US & Canada',
+    selectedChannels: ['meta', 'google', 'tiktok', 'snapchat']
   },
   {
     productName: 'Vela Body Care Line',
@@ -34,7 +44,8 @@ const exampleProducts = [
     monthlySpend: '90000',
     category: 'Beauty',
     newProduct: 'Body Care Collection',
-    targetRegions: 'North America'
+    targetRegions: 'North America',
+    selectedChannels: ['meta', 'google', 'pinterest', 'tiktok']
   },
   {
     productName: 'Peak Form Smart Rope',
@@ -44,15 +55,21 @@ const exampleProducts = [
     monthlySpend: '100000',
     category: 'Fitness',
     newProduct: 'Smart Jump Rope',
-    targetRegions: 'US only'
+    targetRegions: 'US only',
+    selectedChannels: ['meta', 'google', 'tiktok', 'youtube']
   }
 ];
 
-function Step1_ProductInput({ nextStep: propNextStep }) {  // ADD THIS PARAM
+function Step1_ProductInput({ nextStep: propNextStep }) {
   const { productData, setProductData, nextStep: contextNextStep } = usePresentation();
   const nextStep = propNextStep || contextNextStep;
 
   const [errors, setErrors] = useState({});
+  
+  // Initialize channels state - all selected by default
+  const [selectedChannels, setSelectedChannels] = useState(
+    productData.selectedChannels || ['meta', 'google', 'tiktok', 'linkedin', 'snapchat', 'pinterest']
+  );
 
   const handleChange = (field, value) => {
     setProductData(prev => ({ ...prev, [field]: value }));
@@ -64,7 +81,21 @@ function Step1_ProductInput({ nextStep: propNextStep }) {  // ADD THIS PARAM
 
   const handleUseTemplate = (template) => {
     setProductData(template);
+    setSelectedChannels(template.selectedChannels || ['meta', 'google', 'tiktok', 'linkedin']);
     setErrors({});
+  };
+
+  const handleChannelToggle = (channelId) => {
+    if (selectedChannels.includes(channelId)) {
+      // Don't allow deselecting if it's the last one
+      if (selectedChannels.length === 1) {
+        alert('At least one channel must be selected');
+        return;
+      }
+      setSelectedChannels(selectedChannels.filter(id => id !== channelId));
+    } else {
+      setSelectedChannels([...selectedChannels, channelId]);
+    }
   };
 
   const validateAndProceed = () => {
@@ -88,13 +119,15 @@ function Step1_ProductInput({ nextStep: propNextStep }) {  // ADD THIS PARAM
       return;
     }
 
+    // Save selected channels to productData before proceeding
+    setProductData(prev => ({ ...prev, selectedChannels }));
     nextStep();
   };
 
   return (
     <div className="step-container">
       <div className="step-header">
-        <div className="step-badge">Step 1 of 5</div>
+        <div className="step-badge">Step 1 of 3</div>
         <h1 className="step-title">Product Information</h1>
         <p className="step-description">
           Enter your product details or select an example template to get started quickly
@@ -268,6 +301,47 @@ function Step1_ProductInput({ nextStep: propNextStep }) {  // ADD THIS PARAM
           </div>
         </div>
 
+        {/* NEW SECTION: Channel Selection */}
+        <div className="form-section">
+          <div className="form-section-header">
+            <Tv className="section-icon" />
+            <h3 className="section-title">Campaign Channels</h3>
+          </div>
+          
+          <div className="form-group full">
+            <label className="form-label">
+              Select Your Active Channels <span className="optional-label">(Default: All Selected)</span>
+            </label>
+            <p className="form-helper-text">
+              Choose where you're currently running or planning to run campaigns. 
+              Audience discovery will be tailored to these platforms.
+            </p>
+            <div className="channels-grid">
+              {AVAILABLE_CHANNELS.map(channel => {
+                const isSelected = selectedChannels.includes(channel.id);
+                return (
+                  <button
+                    key={channel.id}
+                    type="button"
+                    className={`channel-checkbox ${isSelected ? 'selected' : ''}`}
+                    onClick={() => handleChannelToggle(channel.id)}
+                  >
+                    <div className="channel-checkbox-icon">
+                      {isSelected ? (
+                        <CheckSquare className="check-icon" />
+                      ) : (
+                        <Square className="check-icon" />
+                      )}
+                    </div>
+                    <span className="channel-emoji">{channel.icon}</span>
+                    <span className="channel-name">{channel.name}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
         <div className="form-section">
           <div className="form-section-header">
             <MapPin className="section-icon" />
@@ -300,7 +374,8 @@ function Step1_ProductInput({ nextStep: propNextStep }) {  // ADD THIS PARAM
           <div>
             <p className="info-title">What happens next?</p>
             <p className="info-text">
-              Our LCBM model will analyze your product and discover high-fit audience
+              Our LCBM model will analyze your product across {selectedChannels.length} selected 
+              platform{selectedChannels.length > 1 ? 's' : ''} and discover high-fit audience
               segments based on behavioral signals and content affinities.
             </p>
           </div>

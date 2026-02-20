@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Home, Brain, ArrowRight, MapPin, TrendingUp, Target, DollarSign, Lightbulb } from 'lucide-react';
+import { Home, Brain, ArrowRight, ArrowLeft, MapPin, TrendingUp, Target, DollarSign, Lightbulb, Star, AlertCircle } from 'lucide-react';
 import '../../styles/PresentationFlow.css';
 import '../../styles/Steps.css';
 
@@ -10,23 +10,85 @@ const exampleCompanies = [
     industry: 'Fitness & Wellness',
     currentMarkets: 'California, New York',
     revenue: '12000000',
-    targetExpansion: 'Looking to expand our connected fitness equipment to health-conscious metros with strong gym culture and disposable income'
+    targetExpansion: 'Looking to expand our connected fitness equipment to health-conscious metros with strong gym culture and disposable income',
+    preferenceState: ''
   },
   {
     companyName: 'Vela Beauty Labs',
     industry: 'Clean Beauty & Skincare',
     currentMarkets: 'Los Angeles, Miami',
     revenue: '8500000',
-    targetExpansion: 'Expanding our clean beauty line to markets with high luxury spending and ingredient-conscious consumers'
+    targetExpansion: 'Expanding our clean beauty line to markets with high luxury spending and ingredient-conscious consumers',
+    preferenceState: ''
   },
   {
     companyName: 'Ember Roasts Coffee',
     industry: 'Specialty Coffee & Beverages',
     currentMarkets: 'Seattle, Portland, San Francisco',
     revenue: '15000000',
-    targetExpansion: 'Seeking to bring our craft coffee to emerging coffee culture markets with young professional demographics'
+    targetExpansion: 'Seeking to bring our craft coffee to emerging coffee culture markets with young professional demographics',
+    preferenceState: ''
   }
 ];
+
+// Rate user's preferred state/region against company profile
+function ratePreferenceState(preferenceState, industry, targetExpansion) {
+  if (!preferenceState || !preferenceState.trim()) return null;
+  const state = preferenceState.trim();
+  const industryLower = (industry || '').toLowerCase();
+
+  // Map common state/region names to a rating profile
+  const stateLower = state.toLowerCase();
+  let fitScore = 78;
+  let verdict = 'Moderate fit';
+  let pros = [];
+  let cons = [];
+  let summary = '';
+
+  if (stateLower.includes('texas') || stateLower.includes('tx') || stateLower.includes('austin')) {
+    fitScore = industryLower.includes('fitness') || industryLower.includes('coffee') ? 89 : industryLower.includes('beauty') ? 82 : 86;
+    verdict = fitScore >= 88 ? 'Strong fit' : 'Good fit';
+    pros = ['No state income tax', 'Fast-growing population', 'Strong tech and creative workforce'];
+    cons = industryLower.includes('beauty') ? ['Less established beauty hub vs. coastal markets'] : ['Competition in major metros'];
+    summary = fitScore >= 88 ? 'Texas aligns well with your expansion profile; Austin in particular is a top-tier market for your industry.' : 'Texas offers solid growth potential with lower entry costs than coastal markets.';
+  } else if (stateLower.includes('colorado') || stateLower.includes('co') || stateLower.includes('denver')) {
+    fitScore = industryLower.includes('fitness') || industryLower.includes('health') ? 91 : industryLower.includes('coffee') ? 90 : 85;
+    verdict = fitScore >= 88 ? 'Strong fit' : 'Good fit';
+    pros = ['High disposable income', 'Active lifestyle culture', 'Educated demographic'];
+    cons = ['Higher cost of entry in Denver metro'];
+    summary = 'Colorado is an excellent match for health and outdoor-oriented brands; Denver commands premium positioning.';
+  } else if (stateLower.includes('florida') || stateLower.includes('fl') || stateLower.includes('miami')) {
+    fitScore = industryLower.includes('beauty') || industryLower.includes('skincare') ? 92 : 84;
+    verdict = fitScore >= 90 ? 'Strong fit' : 'Good fit';
+    pros = ['Gateway to Latin American expansion', 'No state income tax', 'Year-round consumer activity'];
+    cons = ['Seasonal tourism impact in some segments'];
+    summary = 'Florida, especially Miami, is a strong fit for beauty and lifestyle expansion with international upside.';
+  } else if (stateLower.includes('california') || stateLower.includes('ca') || stateLower.includes('los angeles') || stateLower.includes('la')) {
+    fitScore = industryLower.includes('beauty') ? 96 : industryLower.includes('fitness') ? 90 : 88;
+    verdict = 'Strong fit';
+    pros = ['Largest consumer market', 'Trend-setting demographics', 'Premium pricing power'];
+    cons = ['Higher entry cost and competition'];
+    summary = 'California remains a flagship market for your category; entry cost is offset by scale and willingness to pay.';
+  } else if (stateLower.includes('arizona') || stateLower.includes('az') || stateLower.includes('scottsdale')) {
+    fitScore = industryLower.includes('beauty') ? 89 : 83;
+    verdict = 'Good fit';
+    pros = ['Affluent demographics', 'Growing metro population', 'Strong spa and wellness culture'];
+    cons = ['Smaller than coastal metros'];
+    summary = 'Arizona offers a strong niche for premium and wellness-focused brands with lower competition.';
+  } else if (stateLower.includes('tennessee') || stateLower.includes('tn') || stateLower.includes('nashville')) {
+    fitScore = industryLower.includes('fitness') || industryLower.includes('coffee') ? 87 : 81;
+    verdict = 'Good fit';
+    pros = ['Fastest-growing metro', 'Lower entry costs', 'Young professional influx'];
+    cons = ['Emerging market; less established than coastal hubs'];
+    summary = 'Tennessee is an attractive growth market with lower barriers to entry and strong demographic trends.';
+  } else {
+    pros = ['Market size and growth potential evaluated', 'Entry costs typically moderate outside top-tier metros'];
+    cons = ['Consider validating with local demand data'];
+    summary = `We've scored ${state} against your profile. Review our top recommendations below for comparison.`;
+  }
+
+  return { stateOrRegion: state, fitScore, verdict, pros, cons, summary };
+}
 
 function RegionalExpansionFlow({ onExit }) {
   const [step, setStep] = useState('input'); // 'input', 'analyzing', 'results'
@@ -35,16 +97,18 @@ function RegionalExpansionFlow({ onExit }) {
     industry: '',
     currentMarkets: '',
     revenue: '',
-    targetExpansion: ''
+    targetExpansion: '',
+    preferenceState: ''
   });
   const [markets, setMarkets] = useState([]);
+  const [preferenceRating, setPreferenceRating] = useState(null);
 
   const handleInputChange = (field, value) => {
     setCompanyData(prev => ({ ...prev, [field]: value }));
   };
 
   const handleUseTemplate = (template) => {
-    setCompanyData(template);
+    setCompanyData({ ...template, preferenceState: template.preferenceState ?? '' });
   };
 
   const handleAnalyze = () => {
@@ -59,6 +123,8 @@ function RegionalExpansionFlow({ onExit }) {
     setTimeout(() => {
       const generatedMarkets = generateMarketsForIndustry(companyData.industry);
       setMarkets(generatedMarkets);
+      const rating = ratePreferenceState(companyData.preferenceState, companyData.industry, companyData.targetExpansion);
+      setPreferenceRating(rating);
       setStep('results');
     }, 2000);
   };
@@ -402,6 +468,18 @@ function RegionalExpansionFlow({ onExit }) {
                         onChange={e => handleInputChange('targetExpansion', e.target.value)}
                       />
                     </div>
+
+                    <div className="form-group full">
+                      <label className="form-label">Preferred state(s) or region(s)</label>
+                      <input
+                        type="text"
+                        className="form-input"
+                        placeholder="e.g., Texas, Colorado, Florida (where you're planning to expand)"
+                        value={companyData.preferenceState}
+                        onChange={e => handleInputChange('preferenceState', e.target.value)}
+                      />
+                      <p className="form-hint">We’ll rate your preference and compare it with our top recommendations.</p>
+                    </div>
                   </div>
                 </div>
 
@@ -449,8 +527,68 @@ function RegionalExpansionFlow({ onExit }) {
               <div className="step-header">
                 <h1 className="step-title">Market Recommendations</h1>
                 <p className="step-description">
-                  Top 3 markets for {companyData.companyName} expansion
+                  Your preference rating and top 3 markets for {companyData.companyName}
                 </p>
+              </div>
+
+              {/* Block 1: Rating of their preference */}
+              {preferenceRating && (
+                <div className="expansion-preference-rating">
+                  <h2 className="expansion-preference-title">
+                    <Target className="expansion-preference-title-icon" />
+                    Your preferred region: {preferenceRating.stateOrRegion}
+                  </h2>
+                  <p className="expansion-preference-intro">
+                    Based on your company profile and expansion goals, here’s how this region stacks up.
+                  </p>
+                  <div className="expansion-preference-card">
+                    <div className="expansion-preference-score-row">
+                      <div className="expansion-preference-fit">
+                        <span className="expansion-preference-fit-value">{preferenceRating.fitScore}</span>
+                        <span className="expansion-preference-fit-label">Fit score</span>
+                      </div>
+                      <span className={`expansion-preference-verdict ${preferenceRating.verdict.replace(/\s+/g, '-').toLowerCase()}`}>
+                        {preferenceRating.verdict}
+                      </span>
+                    </div>
+                    <p className="expansion-preference-summary">{preferenceRating.summary}</p>
+                    <div className="expansion-preference-pros-cons">
+                      <div className="expansion-preference-list">
+                        <h4 className="expansion-preference-list-title">
+                          <Star className="expansion-list-icon" /> Pros
+                        </h4>
+                        <ul>
+                          {preferenceRating.pros.map((p, i) => (
+                            <li key={i}>{p}</li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div className="expansion-preference-list">
+                        <h4 className="expansion-preference-list-title">
+                          <AlertCircle className="expansion-list-icon" /> Considerations
+                        </h4>
+                        <ul>
+                          {preferenceRating.cons.map((c, i) => (
+                            <li key={i}>{c}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* Block 2: Our top recommendations */}
+              <div className="expansion-our-recommendations">
+                <h2 className="expansion-our-rec-title">
+                  <Brain className="expansion-our-rec-icon" />
+                  Our top market recommendations
+                </h2>
+                {preferenceRating && (
+                  <p className="expansion-our-rec-compare">
+                    Compared to your preference, we recommend prioritizing these markets for best fit with your industry and goals.
+                  </p>
+                )}
               </div>
 
               <div className="model-output-box">
@@ -468,10 +606,8 @@ function RegionalExpansionFlow({ onExit }) {
               <div className="markets-grid-expansion">
                 {markets.map((market, idx) => (
                   <div key={market.id} className="expansion-market-card">
-                    <div className="expansion-rank">#{idx + 1}</div>
-                    
                     <div className="expansion-market-header">
-                      <span className="expansion-emoji">{market.emoji}</span>
+                      <div className="expansion-rank">#{idx + 1}</div>
                       <div className="expansion-market-info">
                         <h3 className="expansion-market-name">{market.name}</h3>
                         <p className="expansion-population">{market.population} metro area</p>
@@ -523,10 +659,16 @@ function RegionalExpansionFlow({ onExit }) {
                 ))}
               </div>
 
-              <button className="btn-primary" onClick={() => alert('Export functionality coming soon')}>
-                <ArrowRight className="btn-icon" />
-                Download Full Market Analysis Report
-              </button>
+              <div className="expansion-results-actions">
+                <button className="btn-secondary" onClick={() => setStep('input')}>
+                  <ArrowLeft className="btn-icon" />
+                  Back to Company Overview
+                </button>
+                <button className="btn-primary" onClick={() => alert('Export functionality coming soon')}>
+                  <ArrowRight className="btn-icon" />
+                  Download Full Market Analysis Report
+                </button>
+              </div>
             </>
           )}
         </div>

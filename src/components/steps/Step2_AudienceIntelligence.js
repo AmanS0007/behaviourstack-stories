@@ -4,7 +4,7 @@ import { ArrowRight, ArrowLeft, Brain, Users, TrendingUp, CheckCircle, ChevronDo
 import { generateAudiences, generateExistingAudiences } from '../../utils/audienceGenerator';
 import '../../styles/Steps.css';
 
-function Step2_AudienceIntelligence({ nextStep: propNextStep, prevStep: propPrevStep }) {  // ADD PARAMS
+function Step2_AudienceIntelligence({ nextStep: propNextStep, prevStep: propPrevStep, totalSteps = 5, stepNumber = 2 }) {
   const {
     productData,
     selectedAudiences,
@@ -75,7 +75,7 @@ function Step2_AudienceIntelligence({ nextStep: propNextStep, prevStep: propPrev
   return (
     <div className="step-container">
       <div className="step-header">
-        <div className="step-badge">Step 2 of 5</div>
+        <div className="step-badge">Step {stepNumber} of {totalSteps}</div>
         <h1 className="step-title">Audience Intelligence & Discovery</h1>
         <p className="step-description">
           LCBM discovered {discoveredAudiences.length} new audiences and segmented
@@ -97,6 +97,24 @@ function Step2_AudienceIntelligence({ nextStep: propNextStep, prevStep: propPrev
           <div className="model-stat">
             <span className="stat-label">Input:</span>
             <span className="stat-value">{productData.productName}</span>
+          </div>
+          <div className="model-stat">
+            <span className="stat-label">Data Sources:</span>
+            <span className="stat-value">
+              {productData.selectedChannels?.length
+                ? productData.selectedChannels
+                    .map((ch) =>
+                      ch === 'meta' ? 'Meta' :
+                      ch === 'google' ? 'Google' :
+                      ch === 'tiktok' ? 'TikTok' :
+                      ch === 'linkedin' ? 'LinkedIn' :
+                      ch === 'snapchat' ? 'Snapchat' :
+                      ch === 'pinterest' ? 'Pinterest' :
+                      ch === 'youtube' ? 'YouTube' : ch
+                    )
+                    .join(', ')
+                : 'All Channels'}
+            </span>
           </div>
           <div className="model-stat">
             <span className="stat-label">Existing Customers Analyzed:</span>
@@ -213,6 +231,24 @@ function Step2_AudienceIntelligence({ nextStep: propNextStep, prevStep: propPrev
                         LCBM estimates addressable audience size using platform and third-party signals and category benchmarks within your target geography. Use for planning; validate with your ad platform.
                       </span>
                     </span>
+                  )}
+                  {productData.selectedChannels?.length > 0 && (
+                    <div className="audience-channels">
+                      {productData.selectedChannels.slice(0, 3).map((ch) => (
+                        <span key={ch} className="channel-badge">
+                          {ch === 'meta' ? '📱' :
+                           ch === 'google' ? '🔍' :
+                           ch === 'tiktok' ? '🎵' :
+                           ch === 'linkedin' ? '💼' :
+                           ch === 'snapchat' ? '👻' :
+                           ch === 'pinterest' ? '📌' :
+                           ch === 'youtube' ? '▶️' : '📱'}
+                        </span>
+                      ))}
+                      {productData.selectedChannels.length > 3 && (
+                        <span className="channel-badge">+{productData.selectedChannels.length - 3}</span>
+                      )}
+                    </div>
                   )}
                 </div>
 

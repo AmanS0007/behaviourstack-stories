@@ -31,11 +31,15 @@ function NewCampaignFlow({ onExit }) {
       case 1: return <Step1ProductInput nextStep={() => setCurrentStep(2)} />;
       case 2: return <Step2AudienceIntelligence 
         nextStep={() => setCurrentStep(3)} 
-        prevStep={() => setCurrentStep(1)} 
+        prevStep={() => setCurrentStep(1)}
+        totalSteps={3}
+        stepNumber={2}
       />;
       case 3: return <Step3CreativeIntelligence 
         prevStep={() => setCurrentStep(2)}
         nextStep={handleStep3Complete}
+        totalSteps={3}
+        stepNumber={3}
       />;
       default: return <Step1ProductInput />;
     }
