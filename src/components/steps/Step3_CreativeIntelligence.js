@@ -373,7 +373,7 @@ function Step3_CreativeIntelligence({ nextStep: propNextStep, prevStep: propPrev
               <div className="compare-recommendation-card">
                 <Sparkles className="compare-rec-icon" />
                 <div className="compare-rec-content">
-                  <h3 className="compare-rec-title">Compare with AI-generated variants</h3>
+                  <h3 className="compare-rec-title">Optimized variants available!</h3>
                   <p className="compare-rec-desc">
                     See how Transsuasion AI variants perform against your selected audiences.
                     We&apos;ll generate 4 variants and score them the same way, with full preview
@@ -385,7 +385,7 @@ function Step3_CreativeIntelligence({ nextStep: propNextStep, prevStep: propPrev
                     onClick={handleGenerateForComparison}
                   >
                     <Sparkles className="btn-icon" />
-                    Generate & score AI variants
+                    Generate Variants
                   </button>
                 </div>
               </div>

@@ -366,6 +366,12 @@ function PerformanceDebugFlow({ onExit }) {
                     <div key={idx} className="action-item-debug">
                       <div className="action-number">{idx + 1}</div>
                       <span className="action-text">{action}</span>
+                      {uploadedFile && action.includes('Deploy new creative variants') && (
+                        <button type="button" className="debug-cta-creative" onClick={() => setStep('creative')}>
+                          <Sparkles className="btn-icon" />
+                          Create Performant Content
+                        </button>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -373,12 +379,6 @@ function PerformanceDebugFlow({ onExit }) {
 
               {/* Export CTAs */}
               <div className="debug-export-actions">
-                {uploadedFile && (
-                  <button className="btn-secondary" onClick={() => setStep('creative')}>
-                    <FileText className="btn-icon" />
-                    View Creative Page
-                  </button>
-                )}
                 <button className="btn-primary" onClick={() => alert('Export functionality coming soon - full diagnosis report')}>
                   <ArrowRight className="btn-icon" />
                   Export Full Diagnosis Report
@@ -508,15 +508,11 @@ function PerformanceDebugFlow({ onExit }) {
                 </div>
               )}
 
-              {/* Bottom actions: Back to results, Download report */}
+              {/* Bottom actions: Back to results, Export full report */}
               <div className="debug-creative-page-actions">
                 <button className="btn-secondary" onClick={() => setStep('results')}>
                   <ArrowRight className="btn-icon" style={{ transform: 'rotate(180deg)' }} />
                   Back to Performance Results
-                </button>
-                <button className="btn-secondary" onClick={() => alert('Download report – coming soon')}>
-                  <FileText className="btn-icon" />
-                  Download Report
                 </button>
                 <button className="btn-primary" onClick={() => alert('Export full diagnosis report – coming soon')}>
                   <ArrowRight className="btn-icon" />
